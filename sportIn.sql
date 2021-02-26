@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 25 fév. 2021 à 15:30
+-- Généré le : ven. 26 fév. 2021 à 10:47
 -- Version du serveur :  5.7.24
 -- Version de PHP : 8.0.1
 
@@ -92,7 +92,10 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210225143937', '2021-02-25 14:39:53', 93),
 ('DoctrineMigrations\\Version20210225152147', '2021-02-25 15:21:58', 66),
 ('DoctrineMigrations\\Version20210225152451', '2021-02-25 15:24:59', 81),
-('DoctrineMigrations\\Version20210225152846', '2021-02-25 15:28:52', 91);
+('DoctrineMigrations\\Version20210225152846', '2021-02-25 15:28:52', 91),
+('DoctrineMigrations\\Version20210226102053', '2021-02-26 10:21:24', 114),
+('DoctrineMigrations\\Version20210226102613', '2021-02-26 10:26:21', 80),
+('DoctrineMigrations\\Version20210226102751', '2021-02-26 10:27:57', 100);
 
 -- --------------------------------------------------------
 
@@ -124,14 +127,21 @@ CREATE TABLE `user` (
   `roles` json NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pseudo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pass` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `xp_points` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   `nb_events` int(11) NOT NULL,
   `rgpd` tinyint(1) NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `is_verified` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `level`, `nb_events`, `rgpd`, `created_at`, `is_verified`) VALUES
+(1, 'so@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$Z0wvM1NiWVZRVFlhRC5YcQ$UdKc4NM7touVxVjGTelx+s7Mz9J9TraHNWa/kNVnAoA', 'tutu', 0, 0, 0, 1, '2021-02-26 10:33:35', 0),
+(2, 'tu@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$VmdvUDIyR09nMmx2VVRUbA$1alk3aPiXZoI1G8rrFNQIj5J/ON827k17dLtGgRLxrQ', 'tutu', 0, 0, 0, 1, '2021-02-26 10:36:02', 0);
 
 --
 -- Index pour les tables déchargées
@@ -206,7 +216,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
