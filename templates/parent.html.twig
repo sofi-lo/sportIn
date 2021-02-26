@@ -13,11 +13,11 @@
 <body>
     <header>
         <nav>
-        <a href="#"><img src="images/logo.jpg" alt="logo WebForce3" title="Logo"></a>
-        
-
-
-     
+            <a href="{{ path('index') }}">accueil</a>
+            <a href="{{ path('concept') }}">annonces</a>
+            <a href="{{ path('blog') }}">Blog</a>
+            <a href="{{ path('contact') }}">contact</a>
+        </nav>
     </header>
         <section>
             {% block titre1 %}
