@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Challenge index{% endblock %}
+
+{% block body %}
+    <h1>Challenge index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Pseudo</th>
+                <th>Participant</th>
+                <th>Organisateur</th>
+                <th>XpWinner</th>
+                <th>Arbitre</th>
+                <th>CreatedAt</th>
+                <th>DateValidation</th>
+                <th>DateFin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for challenge in challenges %}
+            <tr>
+                <td>{{ challenge.id }}</td>
+                <td>{{ challenge.type }}</td>
+                <td>{{ challenge.pseudo }}</td>
+                <td>{{ challenge.participant }}</td>
+                <td>{{ challenge.organisateur }}</td>
+                <td>{{ challenge.xpWinner }}</td>
+                <td>{{ challenge.arbitre }}</td>
+                <td>{{ challenge.createdAt ? challenge.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ challenge.dateValidation ? challenge.dateValidation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ challenge.dateFin ? challenge.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('challenge_show', {'id': challenge.id}) }}">show</a>
+                    <a href="{{ path('challenge_edit', {'id': challenge.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('challenge_new') }}">Create new</a>
+{% endblock %}
