@@ -42,15 +42,8 @@ class User implements UserInterface
      */
     private $pseudo;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $pass;
+    
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $role;
 
     /**
      * @ORM\Column(type="integer")
@@ -175,29 +168,9 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getPass(): ?string
-    {
-        return $this->pass;
-    }
+   
 
-    public function setPass(string $pass): self
-    {
-        $this->pass = $pass;
-
-        return $this;
-    }
-
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
+  
 
     public function getXpPoints(): ?int
     {
