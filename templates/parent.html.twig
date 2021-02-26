@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="css/styles.css">
 
     {% block carte1 %}
     {% endblock %}
@@ -13,33 +13,11 @@
 <body>
     <header>
         <nav>
-        <a href="{{ path('index') }}"><img src="images/logo.jpg" alt="logo WebForce3" title="Logo"></a>
+        <a href="#"><img src="images/logo.jpg" alt="logo WebForce3" title="Logo"></a>
         
-            <a href="{{ path('index') }}">accueil</a>
-            <a href="{{ path('concept') }}">Concept</a>
-            <a href="{{ path('dernier_defis') }}">derniers défis</a>
-            <a href="{{ path('blog') }}">blog</a>
-            <a href="{{ path('faq') }}">FAQ</a>
-            <a href="{{ path('contact') }}">contact</a>
-        </nav>
-        {% if is_granted('ROLE_ADMIN') %}
-            <nav class="mb-3">
-                Bienvenue {{ app.user.username }} 
-                <a href="{{ path('admin') }}">admin</a>
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
-            </nav>
-        {% elseif is_granted('ROLE_USER') %}
-            <nav class="mb-3">
-                Bienvenue {{ app.user.username }}
-                <a href="{{ path('membre') }}">espace membre</a>
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
-            </nav>
-        {% else %}
-            <nav>
-                <a href="{{ path('app_register') }}">créez votre compte</a>
-                <a href="{{ path('app_login') }}">connexion</a>
-            </nav>
-        {% endif %}
+
+
+     
     </header>
         <section>
             {% block titre1 %}
@@ -48,8 +26,7 @@
             {% block titre2 %}
             {% endblock %}
 
-            {% block commentaire1 %}
-            {% endblock %}
+#
 
             {% block annonces %}
             {% endblock %}
