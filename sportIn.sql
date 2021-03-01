@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 fév. 2021 à 10:47
+-- Généré le : lun. 01 mars 2021 à 16:03
 -- Version du serveur :  5.7.24
--- Version de PHP : 8.0.1
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,7 +95,10 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210225152846', '2021-02-25 15:28:52', 91),
 ('DoctrineMigrations\\Version20210226102053', '2021-02-26 10:21:24', 114),
 ('DoctrineMigrations\\Version20210226102613', '2021-02-26 10:26:21', 80),
-('DoctrineMigrations\\Version20210226102751', '2021-02-26 10:27:57', 100);
+('DoctrineMigrations\\Version20210226102751', '2021-02-26 10:27:57', 100),
+('DoctrineMigrations\\Version20210301134719', '2021-03-01 13:54:46', 1478),
+('DoctrineMigrations\\Version20210301135335', '2021-03-01 15:31:59', 967),
+('DoctrineMigrations\\Version20210301152210', '2021-03-01 15:34:01', 801);
 
 -- --------------------------------------------------------
 
@@ -132,16 +135,10 @@ CREATE TABLE `user` (
   `nb_events` int(11) NOT NULL,
   `rgpd` tinyint(1) NOT NULL,
   `created_at` datetime NOT NULL,
-  `is_verified` tinyint(1) NOT NULL
+  `is_verified` tinyint(1) NOT NULL,
+  `birth_date` datetime NOT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `user`
---
-
-INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `level`, `nb_events`, `rgpd`, `created_at`, `is_verified`) VALUES
-(1, 'so@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$Z0wvM1NiWVZRVFlhRC5YcQ$UdKc4NM7touVxVjGTelx+s7Mz9J9TraHNWa/kNVnAoA', 'tutu', 0, 0, 0, 1, '2021-02-26 10:33:35', 0),
-(2, 'tu@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$VmdvUDIyR09nMmx2VVRUbA$1alk3aPiXZoI1G8rrFNQIj5J/ON827k17dLtGgRLxrQ', 'tutu', 0, 0, 0, 1, '2021-02-26 10:36:02', 0);
 
 --
 -- Index pour les tables déchargées
@@ -216,7 +213,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
