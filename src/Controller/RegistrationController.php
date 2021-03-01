@@ -20,7 +20,7 @@ class RegistrationController extends AbstractController
 {
     private $emailVerifier;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    public function __construct(EmailVerifier $emailVerifier) 
     {
         $this->emailVerifier = $emailVerifier;
     }
@@ -40,14 +40,14 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setPseudo("tutu");
+            $user->setPseudo("tutu"); 
             $user->setXpPoints(0);
             $user->setLevel(0);
             $user->setNbEvents(0);
             $user->setRgpd(true);
             $user->setCreatedAt(new \DateTime());
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
+            $entityManager->persist($user); 
             $entityManager->flush();
 
             // generate a signed url and email it to the user
@@ -74,7 +74,7 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/verify/email', name: 'app_verify_email')]
-    public function verifyUserEmail(Request $request): Response
+    public function verifyUserEmail(Request $request): Response 
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
