@@ -39,4 +39,28 @@ class SiteSportInController extends AbstractController
             'controller_name' => 'SiteSportInController',
         ]);
     }
+
+    #[Route('/defis', name: 'defis')]
+    public function defis(): Response
+    {
+        return $this->render('site_sport_in/defis.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
+
+    #[Route('/faq', name: 'faq')]
+    public function faq(): Response
+    {
+        return $this->render('site_sport_in/faq.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
+
+    #[Route('/participer', name: 'participer')]
+    public function participer(): Response
+    {
+        return $this->render('site_sport_in/participer.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
 }
