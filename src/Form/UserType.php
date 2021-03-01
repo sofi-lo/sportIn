@@ -22,6 +22,7 @@ class UserType extends AbstractType
             ->add('rgpd')
             ->add('createdAt')
             ->add('isVerified')
+            ->add('birthDate')
         ;
     }
 

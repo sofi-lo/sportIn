@@ -79,6 +79,16 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $birthDate;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Gender;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -244,6 +254,30 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getBirthDate(): ?\DateTimeInterface
+    {
+        return $this->birthDate;
+    }
+
+    public function setBirthDate(\DateTimeInterface $birthDate): self
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->Gender;
+    }
+
+    public function setGender(string $Gender): self
+    {
+        $this->Gender = $Gender;
 
         return $this;
     }

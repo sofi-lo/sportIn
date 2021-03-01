@@ -40,7 +40,6 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setPseudo("tutu"); 
             $user->setXpPoints(0);
             $user->setLevel(0);
             $user->setNbEvents(0);
