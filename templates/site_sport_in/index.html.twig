@@ -1,15 +1,94 @@
 {% extends 'parent.html.twig' %}
 
+{# 1er élément de la page principale #}
 {% block titre1 %}
-<h1>Accueil du site</h1>
+<h3>Ceci ne ressemble à aucun autre réseau social...</h3>
 {% endblock %}
 
-{% block annonces %}
-<h1>Concept de l'accueil du site</h1>
-<p>12 exemples pour réussir le design de la page d’accueil de votre site web
-La page d’accueil est l’une des pages les plus importantes de votre site web. C’est sur elle que la plupart des visiteurs de votre site se font leur première impression et leur ressenti sur votre entreprise et votre offre. C’est la vitrine de votre activité.</p>
-
-<p>Une page d’accueil mal conçue, pas assez claire, pas assez lisible, peu attractive, qui met pas suffisamment en avant votre proposition de valeur vous fera à coup sûr perdre de nombreux clients potentiels.</p>
-
-<p>Pour réussir le design de la page d’accueil de votre site web, nous avons sélectionné pour vous 12 exemples de qualité. Mais avant, rappelons rapidement les règles de base en matière de design / ergonomie à appliquer sur votre page d’accueil.</p>
+{% block titre2 %}
+<h1>Transforme tes <span>séances de sport</span> en un <span>jeu extraordinaire</span> !</h1>
 {% endblock %}
+
+{% block annonces1 %}
+<h1></h1>
+<p>SportIn est le premier réseau social de jeu spécialisé dans le sport.</p>
+<p>Gagne des points d'expérience et monte du niveau en lançant des défis à tes amis ou participe et organise tes propres événements.</p>
+{% endblock %}
+
+{# 2eme élément de la page principale #}
+{% block titre3 %}
+<h3>Mettez-vous au sport en vous amusant !</h3>
+{% endblock %}
+
+{% block titre4 %}
+<h1>Bienvenu dans le monde merveilleux de la gamification</h1>
+{% endblock %}
+
+{% block annonces2 %}
+<h1></h1>
+<p>La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines.</p>
+<p>En particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
+{% endblock %}
+
+{% block photo1 %}
+<section>
+    <article>
+        <a><img src="../uploads/images/capture3.PNG" alt="photo1"></a>
+        <p>Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
+    <article>
+    <article>
+        <a><img src="../uploads/images/capture2.PNG" alt="photo2"></a>
+        <p>Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
+    <article>
+</section>
+{% endblock %}
+
+{# 3eme élément de la page principale #}
+{% block titre5 %}
+<h1>Evenements</h1>
+{% endblock %}
+
+{% block annonces3 %}
+<a><img src="../uploads/images/photo1.PNG" alt="photo1"></a>
+<p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
+<p>Besoins d'une personne pour complèter ton équipe de sort ? Organise ta propre séance et partage la avec la communauté.</p>
+<p>Chaque événement auquel tu participes te fait gagner des points d'expérience qui te permettent de monter de niveau.</p>
+<p><a href="{{ path('defis') }}">Participer à un événement.</a></p>
+<p><a href="{{ path('blog') }}">En savoir plus</a></p>
+{% endblock %}
+
+{% block titre6 %}
+<h1>Défis</h1>
+{% endblock %}
+
+{% block annonces4 %}
+<a><img src="../uploads/images/photo2.PNG" alt="photo2"></a>
+<p>Défis tes amis sur le sport et paris tes points d'expérience. Si tu préféres la jouer en solo, tu peux te lancer des défis pour gagner en expériences et en niveaux</p>
+<p>Besoins d'une personnes pour compléter ton équipe de sport ? Organise ta propre séance et partage la avec la communauté.</p>
+<p><a href="{{ path('defis') }}">Organiser un défi.</a></p>
+<p><a href="{{ path('blog') }}">Participer à un défi</a></p>
+{% endblock %}
+
+{% block titre7 %}
+<h1>Annuaires</h1>
+{% endblock %}
+
+{% block annonces5 %}
+<a><img src="../uploads/images/photo3.PNG" alt="photo3"></a>
+<p>Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
+<p><a href="{{ path('participer') }}">Trouver un lieux.</a></p>
+<p><a href="{{ path('blog') }}">en savoir plus</a></p>
+{% endblock %}
+
+{% block titre8 %}
+<h1>Actualités</h1>
+{% endblock %}
+
+{% block annonces6 %}
+<a><img src="../uploads/images/photo4.PNG" alt="photo4"></a>
+<p>Bénéficie d'actualité exclusive tout en gagnant des points d'expérience pour toute interaction.</p>
+<p>Commente, like ou partage et monte de niveau !</p>
+<p><a href="{{ path('defis') }}">Trouver un lieux.</a></p>
+<p><a href="{{ path('blog') }}">en savoir plus</a></p>
+{% endblock %}
+

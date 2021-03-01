@@ -13,10 +13,13 @@
 <body>
     <header>
         <nav>
-            <a href="{{ path('index') }}">accueil</a>
-            <a href="{{ path('concept') }}">annonces</a>
-            <a href="{{ path('blog') }}">Blog</a>
-            <a href="{{ path('contact') }}">contact</a>
+            <a><img src="../uploads/images/logo.PNG" alt="logo"></a>
+            <a href="{{ path('index') }}">CONCEPT</a>
+            <a href="{{ path('defis') }}">DERNIERS_DEFIS</a>
+            <a href="{{ path('blog') }}">BLOG</a>
+            <a href="{{ path('faq') }}">FAQ</a>
+            <a href="{{ path('contact') }}">CONTACT</a>
+            <a href="{{ path('participer') }}">PARTICIPER AU JEU</a>
         </nav>
     </header>
         <section>
@@ -26,12 +29,43 @@
             {% block titre2 %}
             {% endblock %}
 
-#
+            {% block annonces1 %}
+            {% endblock %}
 
-            {% block annonces %}
+            {% block titre3 %}
+            {% endblock %}
+
+            {% block titre4 %}
+            {% endblock %}
+
+            {% block annonces2 %}
             {% endblock %}
 
             {% block photo1 %}
+            {% endblock %}
+
+            {% block titre5 %}
+            {% endblock %}
+
+            {% block titre6 %}
+            {% endblock %}
+
+            {% block annonces3 %}
+            {% endblock %}
+
+            {% block annonces4 %}
+            {% endblock %}
+
+            {% block titre7 %}
+            {% endblock %}
+
+            {% block annonces5 %}
+            {% endblock %}
+
+            {% block titre8 %}
+            {% endblock %}
+
+            {% block annonces6 %}
             {% endblock %}
 
             {% block formulaire %}
@@ -44,7 +78,7 @@
         </section>
     </main>
     <footer>
-        <p>tous droits réservés</p>
+        <p>&copy;2020_2021 - Site SportIn. Reproduction interdite.</p>
     </footer>
     <script src="{{ asset('js/anime.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>

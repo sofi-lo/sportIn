@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 
 h1 {
-    color:red;
+    color:rgb(179, 126, 12);
     font-size: 18px;
 }
 
@@ -11,12 +11,16 @@ h2{
 
 h3
 {
- color:aqua;
+ color:rgb(58, 20, 224);
 }
 
 h4{
     color: blue;
 }
 
-=======
->>>>>>> d7fafb8658125f4596f833b298798e07de829974
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding:1rem;
+}
+
