@@ -1,13 +1,41 @@
 {% extends 'parent.html.twig' %}
 
 {% block titre1 %}
-<h1>Page défis</h1>
+<h1>DECOUVREZ TOUS LES EVENEMENTS ORGANISES <pan> DANS VOTRE REGION</pan> :</h1>
 {% endblock %}
 
-{% block commentaire1 %}
-<p>Formulaire de défis à venir</p>
+{% block formulaire1 %}
+<label>
+    <input name="ville" type="text" required placeholder="Rechercher une ville">
+    <div>Pour rechercher dans votre ville, vous devez être connecté</div>
+</label>
+<button class="btn">{{ button_label|default('Rechercher') }}</button>
 {% endblock %}
 
-{% block photo1 %}
-<img src="{{ asset('images/photo1.jpg') }}" alt="photo1">
+{% block titre2 %}
+<h1>Les événements de la semaine : <pan> DANS VOTRE REGION</pan> :</h1>
+{% endblock %}
+
+{% block annonces2 %}
+{% endblock %}
+
+{% block titre3 %}
+<h1>Les défis de la semaine : </h1>
+{% endblock %}
+
+{% block annonces3 %}
+{% endblock %}
+
+{% block titre4 %}
+<h1>Partenaires de nos événements : </h1>
+{% endblock %}
+
+{% block annonces4 %}
+    <nav>
+    <li><a><img src="../uploads/images/capture4.PNG" alt="photo4"></a></li>
+    <li><a><img src="../uploads/images/capture5.PNG" alt="photo5"></a></li>
+    <li><a><img src="../uploads/images/capture6.PNG" alt="photo6"></a></li>
+    <li><a><img src="../uploads/images/capture8.PNG" alt="photo8"></a></li>
+    <li><a><img src="../uploads/images/capture9.PNG" alt="photo9"></a></li>
+    </nav>
 {% endblock %}
