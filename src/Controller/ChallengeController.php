@@ -30,8 +30,8 @@ class ChallengeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $userConnecte = $this->getUser();
-            $challenge->setUser($userConnecte);
+            // $userConnecte = $this->getUser();
+            // $challenge->setUser($userConnecte);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($challenge);
             $entityManager->flush();
