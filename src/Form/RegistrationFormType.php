@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use App\Entity\User;
 use Doctrine\Common\Collections\Expr\Value;
 use Symfony\Component\Form\AbstractType;
@@ -19,6 +20,15 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('gender',ChoiceType::class,array(
+                'choices'  => array(
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                    'Autre' => 'Autre',
+                ),
+                'expanded' => false,
+                'multiple' => false
+            ))
             ->add('birthDate', BirthdayType::class, [
                 'widget' => 'choice',
                 'years' => range(1950, 2021),
@@ -46,7 +56,7 @@ class RegistrationFormType extends AbstractType
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
-                    ]),
+                    ]), 
                 ],
             ])
         ;
