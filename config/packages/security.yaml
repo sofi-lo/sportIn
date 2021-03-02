@@ -37,5 +37,5 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
         #  2 mars rôle membre
-         - { path: ^/membre, roles: ROLE_USER }
-        # - { path: ^/profile, roles: ROLE_USER }
+        #   - { path: ^/professionnel, roles: ROLE_PRO }
+        #  - { path: ^/profile, roles: ROLE_USER }
