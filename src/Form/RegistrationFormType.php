@@ -22,6 +22,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        
         ->add('statut', CheckboxType::class, [
             'mapped' => false,
             'constraints' => [
