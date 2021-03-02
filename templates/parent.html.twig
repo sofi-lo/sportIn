@@ -21,6 +21,17 @@
             <a href="{{ path('contact') }}">CONTACT</a>
             <a href="{{ path('participer') }}">PARTICIPER AU JEU</a>
         </nav>
+            {% if app.user %}
+               <div class="mb-3">
+                    Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
+            {% endif %}
+        <nav>
+        <a href="{{ path('app_login') }} ">Connexion</a>
+        </nav>
+        
+
+
     </header>
         <section>
             {% block titre1 %}

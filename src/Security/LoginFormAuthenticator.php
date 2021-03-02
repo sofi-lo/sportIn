@@ -98,6 +98,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         }
 
         // For example : 
+        //2.mars direction de la page index pour l'instant
         return new RedirectResponse($this->urlGenerator->generate('index'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
