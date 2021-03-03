@@ -1,20 +1,85 @@
-{% extends 'base.html.twig' %}
+{% extends 'parent.html.twig' %}
 
-{% block title %}Hello MembreController!{% endblock %}
+{% block title %}Profil{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block bodyMembre %}
+    <header>
+      <!-- slider -->
+    
+        <div class="banniere">
+      <!-- bannière -->
+      
+            <img class="diapo__banniere" src="../uploads/images/photo1.PNG" alt="photo-fond">
+            <img class="diapo__profile" src="../uploads/images/photo2.PNG" alt="photo-profil">
+            <h2 class="pseudo"> {{ app.user.username }}</h2>
+        </div><!-- bannière -->
+    
+         <nav>
+            <div>
+            <a href="{{ path('membre') }}">PROFIL</a>
+            <a href="{{ path('membre') }}">AMIS</a>
+            <a href="{{ path('defis') }}">DEFIS REALISEES</a>
+            <a href="{{ path('membre') }}">EVENEMENTS PARTICIPES</a>
+            </div>
+            <div>
+            <a href=""></a>
+            <a href="{{ path('membre') }}">PARTAGER</a>
+            </div>
+        </nav>
+       </header>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+       <main>
+    <section>
+      <article>
+          <h2>A PROPOS DE MOI</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam erat laoreet. Sed sit amet arcu aliquet, molestie justo at, auctor nunc.</p>
+    </article>
+    <article>
+          <h2>SPORTS FAVORIS</h2>
+          <ul>
+             <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+              <li class=""></li>
+            </ul>
+    </article>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/sportIn/src/Controller/MembreController.php'|file_link(0) }}">src/Controller/MembreController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/sportIn/templates/membre/index.html.twig'|file_link(0) }}">templates/membre/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+      <article>
+            <div>
+            <h2>DEFIS EN COURS</h2>
+            <h2>Nombre de défis</h2>
+            </div>
+            <div>
+            <h3>Titre du défis</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat </p>
+            <ul>
+             <li >Créer le "date"</li>
+              <li >Accepter le "date fin"</li>
+              <li>Nombre de point mis en jeux: 10 xp</li>
+            </ul>
+            </div>
+      </article>
+
+      <article>
+            <h2>PROGRESSION</h2>
+                    <img src="./img" alt="image niveau">
+                    <div>
+                        <p>Prochain</p>
+                        <p>07/28 xp</p>  
+                    </div>
+                </article>
+      <button class="btn défis">CREER UN DEFIS</button>
+      <button class="btn défis">CREER UN EVENEMENT</button>
+    
+    </section>
+  </main><!-- fin du corps -->
+
+
+      
+
 {% endblock %}
