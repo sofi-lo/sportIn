@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                 'widget' => 'choice',
                 'years' => range(1950, 2021),
             ])
-            ->add('email',)
+            ->add('email')
             ->add('pseudo')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

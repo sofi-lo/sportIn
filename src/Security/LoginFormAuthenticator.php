@@ -30,13 +30,17 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     private $urlGenerator;
     private $csrfTokenManager;
     private $passwordEncoder;
+    //2mars pour récupérer le user connecté
+    private $security;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(Security $security, EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        // 2mars ajout de this security
+        $this->security = $security;
     }
 
     public function supports(Request $request)
@@ -48,6 +52,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     public function getCredentials(Request $request)
     {
         $credentials = [
+            // 'pseudo'|'pseudo' => $request->request->get('pseudo','email'),
             'pseudo' => $request->request->get('pseudo'),
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
@@ -96,9 +101,30 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
+//  2.mars personnaliser la personne espace admin ou membre
+        // GOOD
+        // $userConnecte = $this->security->getUser();
+        // $isAdmin = in_array("ROLE_ADMIN", $userConnecte->getRoles());
 
+        // if($isAdmin){
+        //     return new RedirectResponse($this->urlGenerator->generate('admin'));
+        // }
+        $nomRouteRedirection = "index";
+        if ($this->security->isGranted("ROLE_ADMIN")) {
+            // redirection vers la page /admin
+            $nomRouteRedirection = "admin";
+        }
+        elseif ($this->security->isGranted("ROLE_USER")) {
+            // redirection vers la page /membre
+            $nomRouteRedirection = "membre";
+        }
+            // else (in_array("ROLE_USER", $userConnecte->getRoles())){
+            //     return new RedirectResponse($this->urlGenerator->generate('membre'));
+            // }
         // For example : 
-        return new RedirectResponse($this->urlGenerator->generate('index'));
+        //2.mars direction de la page d'accueil
+        // return new RedirectResponse($this->urlGenerator->generate('index'));
+        return new RedirectResponse($this->urlGenerator->generate($nomRouteRedirection));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
