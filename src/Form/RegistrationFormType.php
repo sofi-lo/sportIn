@@ -30,14 +30,18 @@ class RegistrationFormType extends AbstractType
                     'Autre' => 'Autre',
                 ),
                 'expanded' => false,
-                'multiple' => false
+                'multiple' => false               
             ))
             ->add('birthDate', BirthdayType::class, [
                 'widget' => 'choice',
                 'years' => range(1950, 2021),
             ])
-            ->add('email')
-            ->add('pseudo')
+            ->add('email',  TextType::class, [
+                'attr' => ['placeholder' => 'EMAIL']
+            ])
+            ->add('pseudo', TextType::class, [
+                'attr' => ['placeholder' => 'PSEUDO']
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -61,7 +65,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]), 
                 ],
-            ])
+            ], )
         ;
     }
 

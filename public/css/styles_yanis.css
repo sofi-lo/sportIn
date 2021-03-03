@@ -1,4 +1,57 @@
- .titre{
-    color: blue;
-    
+ * {
+     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+
+ .logo_sportin{
+    position: absolute;
+    left: 46.46%;
+    right: 46.32%;
+    top: 8.4%;
+    bottom: 89.94%;
+}
+
+.titre {
+     color: #FC9D44;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 24px;
+     line-height: 17px;
+ }
+
+ .entete {
+     box-sizing: border-box;
+     height: 80px;
+     margin-bottom: 2rem;
+     display: flex;
+     flex-direction: column;
+
+ }
+
+.container{
+    color: #386CFC;
+
+}
+
+ .pseudo {
+     border: 1px solid #386CFC;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .email {
+     border: 1px solid #386CFC;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .mdp {
+     border: 1px solid #386CFC;
+     box-sizing: border-box;
+     border-radius: 10px;
+ }
+
+ .birth_date {
+     border: 1px solid #386CFC;
+     box-sizing: border-box;
+     border-radius: 10px;
  }
