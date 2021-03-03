@@ -1,0 +1,151 @@
+
+* {
+    --primary_color: #FC9D44;
+    --secondary_color: #386CFC;
+    --white_color: #F5F5F5 ;
+    --black_color: #131417 ;
+  }
+
+a {
+    text-decoration: none;
+}
+
+
+
+.container_log {
+    display: flex;
+
+}
+
+.left_col {
+    flex: 1;
+
+}
+
+.right_col {
+    flex: 1;
+
+}
+
+/*********************** Col left *****************/
+
+section div p {
+    margin: 0px;
+}
+
+#recent {
+    font-size: 24px;
+
+}
+
+#click {
+    font-size: 16px;
+
+}
+
+/* card */
+
+#card_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.card{
+    width: 158px;
+    height: 209px;
+    background-color: var(--secondary_color);
+    border-radius: 10px;
+}
+
+.card p {
+    color: var(--primary_color);
+    font-size: 16px;
+    text-align: center;
+
+}
+
+
+
+
+/********************* form************************/
+
+.right_col form input, .right_col form button {
+
+    display: block;
+    width: 330px;
+    height: 62px;
+    margin: 16px 0;
+    border-radius: 10px;
+
+}
+
+main section h1 {
+    color: var(--primary_color);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* Input */
+.right_col form input, .right_col form button {  
+    margin-left: auto;
+    margin-right: auto;
+    width: 330px;
+
+
+}
+
+.right_col form input::placeholder {  
+	text-align: center;
+
+}
+
+
+
+/* mdp */
+
+form div {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 330px;
+    padding-bottom: 16px;
+    border-bottom: solid 1px var(--secondary_color);
+}
+
+form div a {
+    text-decoration: underline;
+    color: var(--secondary_color);;
+}
+
+/* button */
+
+
+#connnect {
+    color: var(--secondary_color);
+    background-color: var(--primary_color);
+    text-decoration: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+#connnect:hover {
+    border: 2px solid var(--secondary_color);
+}
+
+#account {
+    color: var(--white_color);
+    background-color: var(--secondary_color);
+    text-decoration: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    
+}
+
+#account:hover{
+    color: var(--primary_color);
+}
+
