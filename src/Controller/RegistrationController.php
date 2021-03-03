@@ -41,11 +41,11 @@ class RegistrationController extends AbstractController
                 )
             );
 
-        if (isset($_POST['statut']) && !empty($_POST["statut"])){
+        // if (isset($_POST['statut']) && !empty($_POST["statut"])){
 
-        }else{
-            
-        }
+        // }else{
+
+        // }
 
             $user->setXpPoints(0);
             $user->setLevel(0);
