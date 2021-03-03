@@ -7,16 +7,16 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Inscription</h1>
+    <h1 class="titre">Inscription</h1>
 
-    <label class="switch">
+    {# <label class="switch">
     <input type="checkbox" name="statut">
     <span class="slider round"></span>
-    </label>
+    </label> #}
 
     
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.statut) }}
+        {# {{ form_row(registrationForm.statut) }} #}
         {{ form_row(registrationForm.pseudo) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
