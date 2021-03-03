@@ -9,7 +9,12 @@
 
     <h1>Inscription</h1>
 
-    <hr>
+    <label class="switch">
+    <input type="checkbox" name="statut">
+    <span class="slider round"></span>
+    </label>
+
+    
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.statut) }}
         {{ form_row(registrationForm.pseudo) }}
@@ -28,5 +33,5 @@
         }) }}
         <button type="submit" class="btn">M'inscrire</button>
     {{ form_end(registrationForm) }}
-    <hr>
+
 {% endblock %}  

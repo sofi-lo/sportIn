@@ -40,6 +40,13 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+
+        if (isset($_POST['statut']) && !empty($_POST["statut"])){
+
+        }else{
+            
+        }
+
             $user->setXpPoints(0);
             $user->setLevel(0);
             $user->setNbEvents(0);
