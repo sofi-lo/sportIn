@@ -41,11 +41,8 @@ class User implements UserInterface
      */
     private $password;
 
-       /**
+    /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Email(
-     *     message = "désolé '{{ value }}' n'est pas un email valide."
-     * )
      */
     private $pseudo;
 
