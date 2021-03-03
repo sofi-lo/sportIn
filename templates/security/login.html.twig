@@ -1,51 +1,147 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}Log in!{% endblock %}
 
+
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+
+
+
+{# <section class="container_log">
+
+    <section>
+        <p>coucou</p>
+    </section>
+
+    <section>
+        <p>coucou2</p>
+    </section>
+
+</section> #}
+
+
+
+
+
+
+
+
+<main class="container_log">
+
+    <section class="left_col">
+        <div>
+            <a href=""><img src="{{ asset('.../uploads/logo.png') }}" alt="logo" ></a>
+            <p id="recent">Connexions récentes</p>
+            <p id="click">Cliquez sur votre image ou sur ajouter un compte.</p>
         </div>
-    {% endif %}
-{# changement de nom 2.mars #}
-    <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-   
-    <label for="inputEmail">Email</label>
-    <input type="email" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
-    
+        <div id="card_container">
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+            <section class="card">
+                <a href="">
+                <img src="{{ asset('.../uploads/profil1.jpeg') }}" alt="image_profil">
+                <p>patrick</p>
+                </a>            
+            </section>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+            <section class="card">
+                <a href="{{ asset('.../uploads/profil2.jpeg') }}">
+                <img src="" alt="image_profil">
+                <p>patrick</p>   
+                </a>         
+            </section>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+            <section class="card">
+                <a href="">
+                <img src="" alt="image_profil">
+                <p>Ajouter un compte</p>   
+                </a>         
+            </section>
 
-    <button class="btn " type="submit">
-        Se connecter
-    </button>
+        <div>
 
-    <a href="">Mot de passe oublié ?</a>
+    </section>
 
-    <button class="btn " type="submit">
-        Créer un compte
-    </button>
-</form>
+    <section class="right_col" >
+        <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+        <form method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+        {# changement de nom 2.mars #}
+        
+            <input type="email" name="email" id="inputEmail" class="form-control"  autofocus placeholder="Entrez un pseudo" required>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Entrez un pseudo" required>
+            
+
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+            {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+            #}
+
+            <button id="connnect" class="btn" type="submit">
+                Se connecter
+            </button>
+
+            <div> 
+                <a href="">Mot de passe oublié ?</a>
+            </div>
+
+            <button id="account" class="btn" type="submit">
+                Créer un compte
+            </button>
+        </form>
+    </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
  
