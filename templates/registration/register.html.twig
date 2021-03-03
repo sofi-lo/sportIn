@@ -1,37 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
 
-    <h1 class="titre">Inscription</h1>
+	<main style="margin-left: auto; margin-right: auto; width: 50%; text-align: center; margin-top: 100px" ;>
 
-    {# <label class="switch">
-    <input type="checkbox" name="statut">
-    <span class="slider round"></span>
-    </label> #}
 
-    
-    {{ form_start(registrationForm) }}
-        {# {{ form_row(registrationForm.statut) }} #}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+		<a href="#" class="logo_sportin" style="color: #386CFC; text-decoration: none;font-style: normal; font-weight: bold;  font-size: 24px" ;>SPORT<span style="color: #FC9D44;">IN</span>
+		</a>
+
+		<section class="entete">
+			<h1 class="titre">Inscription</h1>
+			<p class="rapide_facile" style="color: #386CFC; font-weight: bold; font-size: 13px">C'est rapide et Façile</p>
+		</section>
+
+		<section class="container">
+			<section style="border: 2px solid #FC9D44; box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0,0,0,0.25); border-radius: 10px; margin-left: 30%;  margin-right: 30%; " ;>
+				{{ form_start(registrationForm) }}
+
+				<section class="pseudo" style="margin: 20px">{{ form_row(registrationForm.pseudo) }}</section>
+
+				<section class="email" style="margin: 20px">{{ form_row(registrationForm.email) }}</section>
+
+				<section class="mdp" style="margin: 20px">{{ form_row(registrationForm.plainPassword, {
             label: 'Mot de passe'
-        }) }}
-        {{ form_row(registrationForm.birthDate, {
-            label: 'Date de naissance'
-        }) }}
-        {{ form_row(registrationForm.gender, {
-            label: 'Genre'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms, {
-            label: "En cochant cette case, vous acceptez nos Conditions générales. Découvrez comment nous recueillons, utilisons et partageons vos données en lisant notre Politique d'utilisation des données et comment nous utilisons les cookies et autres technologies similaires en consultant notre Politique d'utilisation des cookies et vous pouvez à tout moment vous désabonnez. "
-        }) }}
-        <button type="submit" class="btn">M'inscrire</button>
-    {{ form_end(registrationForm) }}
+        }) }}</section>
 
-{% endblock %}  
+				<section class="birth_date" style="margin: 20px">{{ form_row(registrationForm.birthDate, {
+            label: 'Date de naissance'
+        }) }}</section>
+
+				<section style="margin: 20px">{{ form_row(registrationForm.gender, {
+            label: 'Genre'
+        }) }}</section>
+
+				<section style="margin: 20px; font-size: 10px">{{ form_row(registrationForm.agreeTerms, {
+            label: "En cochant cette case, vous acceptez nos Conditions générales. Découvrez comment nous recueillons, utilisons et partageons vos données en lisant notre Politique d'utilisation des données et comment nous utilisons les cookies et autres technologies similaires en consultant notre Politique d'utilisation des cookies et vous pouvez à tout moment vous désabonnez. "
+        }) }}</section>
+
+				<button type="submit" class="btn">M'inscrire</button>
+				{{ form_end(registrationForm) }}
+			</section>
+		</section>
+
+	</main>
+
+{% endblock %}
