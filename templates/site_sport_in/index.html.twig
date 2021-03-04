@@ -5,11 +5,11 @@
 {% block titre1 %}
 <section>
 <div class="diapo">
-    <img class="diapo__image" src="../uploads/images/photo2.PNG" alt="Fond">
+    <img class="diapo__image" src="{{ asset('../uploads/images/photo2.PNG')}}" alt="Fond">
     <!-- Bloc titre -->
     <div class="diapo__text">  
-        <h1 class="diapo__title"><span id="blanc">Ceci ne ressemble à aucun autre</span><span id="bleu"> réseau social...</span></h1>
-        <h1><span id="bleu">Transforme tes</span> <span id="orange">séances de sport</span><span id="bleu"> en un <span id="orange">jeu extraordinaire</span> !</h1>
+        <h1 class="diapo__title"><span id="blanc">CECI NE RESSEMBLE A AUCUN AUTRE</span><span id="bleu"> RESEAU SOCIAL...</span></h1>
+        <h1><span id="bleu">TRANSFORME TES</span> <span id="orange">SEANCES DE SPORT</span><span id="bleu"> EN UN <span id="orange">JEU EXTRAORDINAIRE</span> !</h1>
         <p>SportIn est le premier réseau social de jeu spécialisé dans le sport.</p>
         <p>Gagne des points d'expérience et monte du niveau en lançant des défis à tes amis ou participe et organise tes propres événements.</p>
     </div>
@@ -20,92 +20,88 @@
 {############### page 2 ########}
 {% block titre2  %}
 <section class="diapo">
-<h3>Mettez-vous au sport en vous amusant !</h3>
-<h1>Bienvenu dans le monde merveilleux de la gamification</h1>
-<p>La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines.</p>
-<p>En particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
+    <br id="page2">
+    <h5 id="blanc">METTEZ-VOUS AU SPORT EN VOUS AMUSANT!</h5>
+    <h1 id="orange">BIENVENU DANS LE MONDE MERVEILLEUX DE LA GAMIFICATION</h1>
+    <p id="blanc">La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines.</p>
+    <p id="blanc">En particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
+    <br id="page2">
+<div id="contener">
+    <article>
+        <a><img src="{{ asset('../uploads/images/capture3.PNG')}}" alt="photo1"></a>
+        <p id="orange">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
+    </article>
 
-<article>
-    <nav>
-        <li><a><img src="../uploads/images/capture3.PNG" alt="photo1"></a></li>
-        <li><p>Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p></li>
-    </nav>
-<article>
-
-<article>
-    <nav>
-        <li><a><img src="../uploads/images/capture2.PNG" alt="photo2"></a></li>
-        <li><p>Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p></li>
-    </nav>
-<article>
-
+    <article>
+        <a><img src="{{ asset('../uploads/images/capture2.PNG')}}" alt="photo2"></a>
+        <p id="orange">Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
+    </article>
+   
+</div>
 </section>
 {% endblock %}
 
-{% block titre20 %}
-{% endblock %}
-
-{% block annonces1 %}
-{% endblock %}
-
-{# 2eme élément de la page principale #}
-{% block titre3 %}
-{% endblock %}
-
-{% block titre4 %}
-{% endblock %}
-
-{% block annonces2 %}
-{% endblock %}
-
-
-
 {# 3eme élément de la page principale #}
-{% block titre5 %}
-<h1>Evenements</h1>
-{% endblock %}
+{% block titre3 %}
 
-{% block annonces3 %}
-<a><img src="../uploads/images/photo1.PNG" alt="photo1"></a>
-<p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
-<p>Besoins d'une personne pour complèter ton équipe de sort ? Organise ta propre séance et partage la avec la communauté.</p>
-<p>Chaque événement auquel tu participes te fait gagner des points d'expérience qui te permettent de monter de niveau.</p>
-<p><a href="{{ path('defis') }}">Participer à un événement.</a></p>
-<p><a href="{{ path('blog') }}">En savoir plus</a></p>
-{% endblock %}
+<section>
+<h1 id="orange">EVENEMENTS</h1>
+    <div  id="contener">
+        <div>
+            <a><img id="image" src="{{ asset('../uploads/images/photo1.PNG')}}" alt="photo1"></a>
+        </div>
+        <div>
+            <p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
+            <p>Besoins d'une personne pour complèter ton équipe de sort ? Organise ta propre séance et partage la avec la communauté.</p>
+            <p>Chaque événement auquel tu participes te fait gagner des points d'expérience qui te permettent de monter de niveau.</p>
+            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Participer à un événement.</strong></span></a></p>
+            <p id="bleu"><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>En savoir plus</strong></span></a></p>
+        </div>
+    </div>
+</section>
 
-{% block titre6 %}
-<h1>Défis</h1>
-{% endblock %}
+<section>
+<h1 id="orange">DEFIS</h1>
+    <div  id="contener">
+        <div>
+            <p>Défis tes amis sur le sport et paris tes points d'expérience. Si tu préféres la jouer en solo, tu peux te lancer des défis pour gagner en expériences et en niveaux</p>
+            <p>Besoins d'une personnes pour compléter ton équipe de sport ? Organise ta propre séance et partage la avec la communauté.</p>
+            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Organiser un défi.</strong></span></a></p>
+            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Participer à un défi</strong></span></a></p>
+        </div>    
+        <div>
+            <a><img id="image" src="{{ asset('../uploads/images/photo2.PNG')}}" alt="photo2"></a>
+        </div>
+    </div>            
+</section>
 
-{% block annonces4 %}
-<a><img src="../uploads/images/photo2.PNG" alt="photo2"></a>
-<p>Défis tes amis sur le sport et paris tes points d'expérience. Si tu préféres la jouer en solo, tu peux te lancer des défis pour gagner en expériences et en niveaux</p>
-<p>Besoins d'une personnes pour compléter ton équipe de sport ? Organise ta propre séance et partage la avec la communauté.</p>
-<p><a href="{{ path('defis') }}">Organiser un défi.</a></p>
-<p><a href="{{ path('blog') }}">Participer à un défi</a></p>
-{% endblock %}
+<section>
+<h1 id="orange">ANNUAIRE</h1>
+    <div  id="contener">
+        <div>
+            <a><img id="image" src="{{ asset('../uploads/images/photo3.PNG')}}" alt="photo3"></a>
+        </div>
+        <div>
+            <p>Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
+            <p><a href="{{ path('participer') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
+            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>en savoir plus</strong></span></a></p>
+        </div>
+    </div>   
+</section>
 
-{% block titre7 %}
-<h1>Annuaires</h1>
-{% endblock %}
-
-{% block annonces5 %}
-<a><img src="../uploads/images/photo3.PNG" alt="photo3"></a>
-<p>Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
-<p><a href="{{ path('participer') }}">Trouver un lieux.</a></p>
-<p><a href="{{ path('blog') }}">en savoir plus</a></p>
-{% endblock %}
-
-{% block titre8 %}
-<h1>Actualités</h1>
-{% endblock %}
-
-{% block annonces6 %}
-<a><img src="../uploads/images/photo4.PNG" alt="photo4"></a>
-<p>Bénéficie d'actualité exclusive tout en gagnant des points d'expérience pour toute interaction.</p>
-<p>Commente, like ou partage et monte de niveau !</p>
-<p><a href="{{ path('defis') }}">Trouver un lieux.</a></p>
-<p><a href="{{ path('blog') }}">en savoir plus</a></p>
+<section>
+<h1 id="orange">ACTUALITES</h1>
+    <div  id="contener">
+        <div>
+            <p>Bénéficie d'actualité exclusive tout en gagnant des points d'expérience pour toute interaction.</p>
+            <p>Commente, like ou partage et monte de niveau !</p>
+            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
+            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>en savoir plus</strong></span></a></p>
+        </div>
+        <div>
+            <a><img id="image" src="{{ asset('../uploads/images/photo4.PNG') }}" alt="photo4"></a>
+        </div>
+    </div>              
+</section>
 {% endblock %}
 
