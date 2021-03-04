@@ -21,7 +21,7 @@
             <a href="{{ path('blog') }}">BLOG</a>
             <a href="{{ path('faq') }}">FAQ</a>
             <a href="{{ path('contact') }}">CONTACT</a>
-            <a href="{{ path('participer') }}">PARTICIPER AU JEU</a>
+            <a href="{{ path('app_register') }}">PARTICIPER AU JEU</a>
         </nav>
             {% if app.user %}
                <div class="mb-3">
@@ -90,17 +90,21 @@
             {% block bodyMembre %}
             {% endblock %}
 
+            {% block container_login %}
+            {% endblock %}
+
+
 
         </section>
     </main>
     <footer>
     <nav class="footerColor">
         <li><h2>NOUS SUIVRE : </h2></li>
-        <li><a href="https://facebook.com"><i class="lab la-facebook-f"></i></a></li>
-        <li><a href="https://twitter.com"><i class="lab la-twitter"></i></a></li>
-        <li><a href="https://instagram.com"><i class="lab la-instagram"></i></a></li>
-        <li><a href="https://youtube.com"><i class="lab la-youtube"></i></a></li>
-        <li><a href="https://pinterest.com"><i class="lab la-pinterest"></i></li>
+        <li><a href="https://facebook.com"><img src="uploads/svg/facebook.svg" alt="facebook"></a></li>
+        <li><a href="https://twitter.com"><img src="uploads/svg/twitter.svg" alt="facebook"></a></li>
+        <li><a href="https://instagram.com"><img src="uploads/svg/instagram.svg" alt="facebook"></a></li>
+        <li><a href="https://youtube.com"><img src="uploads/svg/youtube.svg" alt="facebook"></a></li>
+        <li><a href="https://pinterest.com"><img src="uploads/svg/pinterest.svg" alt="facebook"></li>
     </nav>
     <section class="colorSection">
     <article>

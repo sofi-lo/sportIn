@@ -9,23 +9,27 @@
         <div class="banniere">
       <!-- bannière -->
       
-            <img class="diapo__banniere" src="{{ asset('../uploads/images/photo1.PNG') }}" alt="photo-fond">
-            <img class="diapo__profile" src="{{ asset('../uploads/images/photo1.PNG') }}" alt="photo-profil">
+            <img class="diapo_banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
+            <img class="diapo_profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
+
+            <div class="texte_profil">
             <h2 class="pseudo"> {{ app.user.username }}</h2>
-            <p>age</p>
-            <p>Description</p>
+            <p>{{ app.user.birthDate|date('d-m-Y ') }}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam erat laoreet. Sed sit amet arcu aliquet, molestie justo at, auctor nunc.</p>
+            </div><!-- texte_profil -->
+            
         </div><!-- bannière -->
     
-         <nav>
+         <nav class="nav_banniere">
             <div>
-            <a href="{{ path('membre') }}">PROFIL</a>
-            <a href="{{ path('amis') }}">AMIS</a>
-            <a href="{{ path('defis') }}">DEFIS REALISEES</a>
-            <a href="{{ path('membre') }}">EVENEMENTS PARTICIPES</a>
+            <a href="{{ path('user_new') }}">profil</a>
+            <a href="{{ path('amis') }}">amis</a>
+            <a href="{{ path('defis') }}">défis réalisés</a>
+            <a href="{{ path('membre') }}">événements participés</a>
             </div>
             <div>
             <a href=""></a>
-            <a href="{{ path('partager') }}">PARTAGER</a>
+            <a href="{{ path('partager') }}">partager</a>
             </div>
         </nav>
        </header>
@@ -33,8 +37,8 @@
        <main>
     <section>
       <article>
-          <h2>A PROPOS DE MOI</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam erat laoreet. Sed sit amet arcu aliquet, molestie justo at, auctor nunc.</p>
+          <h2>à propos de moi</h2>
+          <p>{{ app.user.description }}</p>
     </article>
     <article>
           <h2>SPORTS FAVORIS</h2>
