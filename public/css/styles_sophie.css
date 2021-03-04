@@ -1,5 +1,9 @@
-
-* {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
     --primary_color: #FC9D44;
     --secondary_color: #386CFC;
     --white_color: #F5F5F5 ;
@@ -40,11 +44,11 @@ header{
      left: 51%;
      transform: translate(-50%, -50%);
      color:  #FC9D44;
+     line-height: 1.5;
  
 }
-
 .texte_profil h2{
-    color:  #FC9D44;
+    color:  #FC9D44; 
 }
 
 /*  nav banniere */
@@ -52,17 +56,17 @@ header{
   background-color: #386CFC; 
   width: 100%; 
   display: flex;
+  justify-content: space-between;
 }
 
 .nav_banniere a{
     color: white;
     text-transform: uppercase;
+    font-weight:bold;
+    display: inline-block;
+        margin: 0 1rem;
+        padding: 1.3rem;
 
 }
 
-.nav_banniere div{
-     display: flex;
-    justify-content:center; 
-    
-}
 
