@@ -54,9 +54,10 @@ header{
 /*  nav banniere */
 .nav_banniere{
   background-color: #386CFC; 
-  width: 100%; 
+  /* width: 100%;  */
   display: flex;
   justify-content: space-between;
+  
 }
 
 .nav_banniere a{
