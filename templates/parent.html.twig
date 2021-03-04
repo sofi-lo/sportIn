@@ -21,7 +21,7 @@
             <a href="{{ path('blog') }}">BLOG</a>
             <a href="{{ path('faq') }}">FAQ</a>
             <a href="{{ path('contact') }}">CONTACT</a>
-            <a href="{{ path('participer') }}">PARTICIPER AU JEU</a>
+            <a href="{{ path('app_register') }}">PARTICIPER AU JEU</a>
         </nav>
             {% if app.user %}
                <div class="mb-3">
@@ -89,6 +89,10 @@
 
             {% block bodyMembre %}
             {% endblock %}
+
+            {% block container_login %}
+            {% endblock %}
+
 
 
         </section>

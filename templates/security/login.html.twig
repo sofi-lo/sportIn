@@ -8,110 +8,92 @@
 {% block body %}
 
 
+{% block container_login %}
 
+    <main class="container_log">
 
-{# <section class="container_log">
-
-    <section>
-        <p>coucou</p>
-    </section>
-
-    <section>
-        <p>coucou2</p>
-    </section>
-
-</section> #}
-
-
-
-
-
-
-
-
-<main class="container_log">
-
-    <section class="left_col">
-        <div>
-            <a href=""><img src="{{ asset('uploads/images/logo.png') }}" alt="logo" ></a>
-            <p id="recent">Connexions récentes</p>
-            <p id="click">Cliquez sur votre image ou sur ajouter un compte.</p>
-        </div>
-        <div id="card_container">
-
-            <section class="card">
-                <a href="">
-                <img src="{{ asset('uploads/images/profil1.jpg') }}" alt="image_profil">
-                <p>patrick</p>
-                </a>            
-            </section>
-
-            <section class="card">
-                <a href="">
-                <img src="{{ asset('uploads/images/profil2.jpg') }}" alt="image_profil">
-                <p>patrick</p>   
-                </a>         
-            </section>
-
-            <section class="card">
-                <a href="">
-                <img src="{{ asset('uploads/images/profil2.jpg') }}" alt="image_profil">
-                <p>Ajouter un compte</p>   
-                </a>         
-            </section>
-
-        <div>
-
-    </section>
-
-    <section class="right_col" >
-        <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-        <form method="post">
-            {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
-
-            {% if app.user %}
-                <div class="mb-3">
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                </div>
-            {% endif %}
-        {# changement de nom 2.mars #}
-        
-            <input type="email" name="email" id="inputEmail" class="form-control"  autofocus placeholder="Entrez un pseudo" required>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Entrez un pseudo" required>
-            
-
-            <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
-            >
-
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
-
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
-                    </label>
-                </div>
-            #}
-
-            <button id="connnect" class="btn" type="submit">
-                Se connecter
-            </button>
-
-            <div> 
-                <a href="">Mot de passe oublié ?</a>
+        <section class="left_col">
+            <div>
+                <a href="{{ path('index') }}"><img id="logo" src="{{ asset('uploads/images/logo.png') }}" alt="logo" ></a>
+                <p id="recent">Connexions récentes</p>
+                <p id="click">Cliquez sur votre image ou sur ajouter un compte.</p>
             </div>
+            <div id="card_container">
 
-            <button id="account" class="btn" type="submit">
-                Créer un compte
-            </button>
-        </form>
-    </section>
+                <section class="card">
+                    <a href="">
 
-</main>
+                        <img src="{{ asset('uploads/images/profil1.jpg') }}" alt="image_profil">
+                        <div>
+                            <p>patrick</p>
+                        </div>
+                    </a>            
+                </section>
+
+
+                <section class="card">
+                    <a href="">
+                        <img id="plus_account" src="{{ asset('uploads/svg/plus.svg') }}" alt="image_profil">
+                        <div id="add_account">
+                            <p  >Ajouter un compte</p>   
+                        </div>
+                        
+                    </a>         
+                </section>
+
+            <div>
+
+        </section>
+
+        <section class="right_col" >
+            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+            {# changement de nom 2.mars #}
+            
+                <input type="email" name="email" id="inputEmail" class="form-control"  autofocus placeholder="Entrez un pseudo" required>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Entrez un mot de passe" required>
+                
+
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+
+                <button id="connect" class="btn" type="submit">
+                    Se connecter
+                </button>
+
+                <div id="mdp" > 
+                    <a href="">Mot de passe oublié ?</a>
+                </div>
+
+                <a href="{{ path('app_register') }}" id="account" > <span id="button_account" >Créer un compte</span> </a>
+
+            </form>
+        </section>
+
+    </main>
+    
+{% endblock %}
 
 
 
