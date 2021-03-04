@@ -5,13 +5,15 @@
 {% block titre1 %}
 <section>
 <div class="diapo">
-    <img class="diapo__image" src="{{ asset('../uploads/images/photo2.PNG')}}" alt="Fond">
+    <img class="diapo__image" src="{{ asset('uploads/images/photo2.PNG')}}" alt="Fond">
     <!-- Bloc titre -->
     <div class="diapo__text">  
         <h1 class="diapo__title"><span id="blanc">CECI NE RESSEMBLE A AUCUN AUTRE</span><span id="bleu"> RESEAU SOCIAL...</span></h1>
         <h1><span id="bleu">TRANSFORME TES</span> <span id="orange">SEANCES DE SPORT</span><span id="bleu"> EN UN <span id="orange">JEU EXTRAORDINAIRE</span> !</h1>
         <p>SportIn est le premier réseau social de jeu spécialisé dans le sport.</p>
         <p>Gagne des points d'expérience et monte du niveau en lançant des défis à tes amis ou participe et organise tes propres événements.</p>
+        <p>Franchis tes propres limites, tout en t'amusant !</p>
+        <button id="button" type="submit">Participer au jeu</button>
     </div>
 </div>
 </section>
@@ -28,12 +30,12 @@
     <br id="page2">
 <div id="contener">
     <article>
-        <a><img src="{{ asset('../uploads/images/capture3.PNG')}}" alt="photo1"></a>
+        <a><img src="{{ asset('uploads/images/capture3.PNG')}}" alt="photo1"></a>
         <p id="orange">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
     </article>
 
     <article>
-        <a><img src="{{ asset('../uploads/images/capture2.PNG')}}" alt="photo2"></a>
+        <a><img src="{{ asset('uploads/images/capture2.PNG')}}" alt="photo2"></a>
         <p id="orange">Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
     </article>
    
@@ -48,7 +50,7 @@
 <h1 id="orange">EVENEMENTS</h1>
     <div  id="contener">
         <div>
-            <a><img id="image" src="{{ asset('../uploads/images/photo1.PNG')}}" alt="photo1"></a>
+            <a><img id="image" src="{{ asset('uploads/images/photo1.PNG')}}" alt="photo1"></a>
         </div>
         <div>
             <p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
@@ -70,7 +72,7 @@
             <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Participer à un défi</strong></span></a></p>
         </div>    
         <div>
-            <a><img id="image" src="{{ asset('../uploads/images/photo2.PNG')}}" alt="photo2"></a>
+            <a><img id="image" src="{{ asset('uploads/images/photo2.PNG')}}" alt="photo2"></a>
         </div>
     </div>            
 </section>
@@ -79,12 +81,11 @@
 <h1 id="orange">ANNUAIRE</h1>
     <div  id="contener">
         <div>
-            <a><img id="image" src="{{ asset('../uploads/images/photo3.PNG')}}" alt="photo3"></a>
+            <a><img id="image" src="{{ asset('uploads/images/photo3.PNG')}}" alt="photo3"></a>
         </div>
         <div>
             <p>Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
             <p><a href="{{ path('participer') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
-            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>en savoir plus</strong></span></a></p>
         </div>
     </div>   
 </section>
@@ -96,10 +97,9 @@
             <p>Bénéficie d'actualité exclusive tout en gagnant des points d'expérience pour toute interaction.</p>
             <p>Commente, like ou partage et monte de niveau !</p>
             <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
-            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>en savoir plus</strong></span></a></p>
         </div>
         <div>
-            <a><img id="image" src="{{ asset('../uploads/images/photo4.PNG') }}" alt="photo4"></a>
+            <a><img id="image" src="{{ asset('uploads/images/photo4.PNG') }}" alt="photo4"></a>
         </div>
     </div>              
 </section>

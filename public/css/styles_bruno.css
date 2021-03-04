@@ -76,6 +76,12 @@ footer section article {
     height: 100%;
 }
 
+#button{
+    background-color: #386cfc;
+    border-radius: 7%;
+    padding : 2%;
+    color: #fc9d44;
+}
 
 
 
