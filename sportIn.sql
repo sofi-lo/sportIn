@@ -162,7 +162,7 @@ CREATE TABLE `user` (
   `is_verified` tinyint(1) NOT NULL,
   `birth_date` datetime NOT NULL,
   `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` longtext COLLATE utf8mb4_unicode_ci NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
