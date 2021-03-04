@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -90,6 +92,27 @@ class User implements UserInterface
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="users")
+     */
+    private $event;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Challenge::class, inversedBy="users")
+     */
+    private $challenge;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Blog::class, cascade={"persist", "remove"})
+     */
+    private $blog;
+
+    public function __construct()
+    {
+        $this->event = new ArrayCollection();
+        $this->challenge = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -297,6 +320,66 @@ class User implements UserInterface
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Event[]
+     */
+    public function getEvent(): Collection
+    {
+        return $this->event;
+    }
+
+    public function addEvent(Event $event): self
+    {
+        if (!$this->event->contains($event)) {
+            $this->event[] = $event;
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Event $event): self
+    {
+        $this->event->removeElement($event);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Challenge[]
+     */
+    public function getChallenge(): Collection
+    {
+        return $this->challenge;
+    }
+
+    public function addChallenge(Challenge $challenge): self
+    {
+        if (!$this->challenge->contains($challenge)) {
+            $this->challenge[] = $challenge;
+        }
+
+        return $this;
+    }
+
+    public function removeChallenge(Challenge $challenge): self
+    {
+        $this->challenge->removeElement($challenge);
+
+        return $this;
+    }
+
+    public function getBlog(): ?Blog
+    {
+        return $this->blog;
+    }
+
+    public function setBlog(?Blog $blog): self
+    {
+        $this->blog = $blog;
 
         return $this;
     }
