@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav>
-            <a><img src="uploads/images/logo.png" alt="logo"></a>
+            <a><a href="{{ path('index') }}"><img src="{{ asset('uploads/images/logo.png')}}" alt="logo"></a></a>
             <a href="{{ path('index') }}">CONCEPT</a>
             <a href="{{ path('defis') }}">DERNIERS_DEFIS</a>
             <a href="{{ path('blog') }}">BLOG</a>
@@ -104,7 +104,7 @@
     </nav>
     <section class="colorSection">
     <article>
-        <h2 id="orange" >SPORTIN</h2>
+        <h2 id="orange" >SportIn</h2>
         <li><a href="#">Connexion</a></li>
         <li><a href="#">Inscription</a></li>
         <li><a href="{{ path('index') }}">Concept</a></li>
@@ -115,6 +115,7 @@
         <li><a href="#">Avis & témoignages</a></li>
         <li><a href="#">Le groupe Facebook</a></li>
         <li><a href="#">Notre chaine youtube</a></li>
+        <li><a href="#"></a></li>
     </article>
     <article>
         <h2 id="orange">Informations</h2>

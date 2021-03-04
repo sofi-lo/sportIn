@@ -1,48 +1,135 @@
 {% extends 'parent.html.twig' %}
 
 {% block titre1 %}
-<h1>DECOUVREZ TOUS LES EVENEMENTS ORGANISES <pan> DANS VOTRE REGION</pan> :</h1>
+
+<section>
+    <div class="diapo">
+        <img class="diapo__image" src="{{ asset('uploads/images/photo2.PNG')}}" alt="Fond">
+        <div class="diapo__event">
+        <h1><pan id="bleu">DECOUVREZ TOUS LES EVENEMENTS ORGANISES<pan></h1>
+        <p><pan id="orange"> DANS VOTRE REGION :</pan></p> 
+    <label>
+        <input id="bleu" name="ville" type="text" required placeholder="Rechercher une ville">
+        <div><pan id="bleu">Pour rechercher dans votre ville, vous devez être connecté.<pan></div>
+    </label>
+
+    <button id="button">{{ button_label|default('Rechercher') }}</button>
+</section>
 {% endblock %}
 
-{% block formulaire1 %}
-<label>
-    <input name="ville" type="text" required placeholder="Rechercher une ville">
-    <div>Pour rechercher dans votre ville, vous devez être connecté</div>
-</label>
-<button class="btn">{{ button_label|default('Rechercher') }}</button>
-{% endblock %}
-
+{# 2ème partie de la page #}
 {% block titre2 %}
-<h1>Les événements de la semaine : <pan> DANS VOTRE REGION</pan> :</h1>
-{% endblock %}
 
-{% block annonces2 %}
+    <section class="event"> <!-- Our Team-->
+        <h2 class="event__title" id="orange">Les événements de la semaine :</h2>
+        <div class="event__grid"> <!-- Grid-->
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <figcaption class="event__couleur">
+                    <h3>Trophée de l'aiguille</h3>
+                    <p>Adresse : pic d'Etretat</p>
+                    <p>Ville : Etretat</p>
+                </figcaption> 
+            </figure>
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="David Martin">
+                <figcaption>
+                    <h3>Loto sportif</h3>
+                    <p>Adresse : Casino Royal</p>
+                    <p>Ville : Las Vegas</p>
+                </figcaption>
+            </figure>
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Jenefir White">
+                <figcaption>
+                    <h3>Gouter anglais</h3>
+                    <p>Adresse : 10 Downing Street </p>
+                    <p>Ville : Londres</p>
+                </figcaption>
+            </figure>
+
+        </div> <!-- Grid--> 
+    </section>
 {% endblock %}
 
 {% block titre3 %}
-<h1>Les défis de la semaine : </h1>
-{% endblock %}
 
-{% block annonces3 %}
+    <section class="event"> <!-- Our Team-->
+        <h2 class="event__title" id="orange">Les défis de la semaine : </h2>
+        <div class="event__grid"> <!-- Grid-->
+
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <figcaption>
+                <h3>Lancé du sachet de Trophée</h3>
+                <p>Adresse : 10 Downing Street </p>
+                <p>Ville : Londres</p>
+                </figcaption>
+            </figure>
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="David Martin">
+                <figcaption>
+                <h3>Jeux celtiques</h3>
+                <p>Adresse : plage de erquy</p>
+                <p>Ville : Erquy</p>
+                </figcaption>
+            </figure>
+            <figure class="event__member" >
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Jenefir White">
+                <figcaption>
+                <h3>Descente libre</h3>
+                <p>Adresse : Piste d'altitude</p>
+                <p>Ville : Chamonix</p>
+                </figcaption>
+            </figure>
+        </div> <!-- Grid--> 
+    </section>
 {% endblock %}
 
 {% block titre4 %}
-<h1>Partenaires de nos événements : </h1>
-{% endblock %}
-
-{% block annonces4 %}
-    <nav>
-    <li><a><img src="../uploads/images/capture4.PNG" alt="photo4"></a></li>
-    <li><a><img src="../uploads/images/capture5.PNG" alt="photo5"></a></li>
-    <li><a><img src="../uploads/images/capture6.PNG" alt="photo6"></a></li>
-    <li><a><img src="../uploads/images/capture8.PNG" alt="photo8"></a></li>
-    <li><a><img src="../uploads/images/capture9.PNG" alt="photo9"></a></li>
-    </nav>
+<h1 id="orange">Partenaires de nos événements : </h1>
+    <div id="sponsor">
+        <div id="sponsor_ecart"><img id="sponsor_image" src="{{ asset('uploads/images/capture4.png')}}" alt="photo4"></div>
+        <div id="sponsor_image"><img id="sponsor_image" src="{{ asset('uploads/images/capture5.png')}}" alt="photo5"></div>
+        <div id="sponsor_image"><img id="sponsor_image" src="{{ asset('uploads/images/capture6.png')}}" alt="photo6"></div>
+        <div id="sponsor_image"><img id="sponsor_image" src="{{ asset('uploads/images/capture8.png')}}" alt="photo8"></div>
+        <div id="sponsor_image"><img id="sponsor_image" src="{{ asset('uploads/images/capture9.png')}}" alt="photo9"></div>
+    </div>
 {% endblock %}
 
 {% block titre5 %}
-<h1>Actualité sportive </h1>
+
+    <section class="event"> <!-- Our Team-->
+        <h2 class="event__title" id="orange">Actualités sportives : </h2>
+        <div class="event__grid"> <!-- Grid-->
+
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <figcaption>
+                <h3>Court Forest Gump</h3>
+                <p>Adresse : 10 rue droit devant </p>
+                <p>Ville : Paris</p>
+                </figcaption>
+            </figure>
+            <figure class="event__member">
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="David Martin">
+                <figcaption>
+                <h3>Courses des Barmans</h3>
+                <p>Adresse : Place de la mairie</p>
+                <p>Ville : Lyons</p>
+                </figcaption>
+            </figure>
+            <figure class="event__member" >
+                <img class="event__picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Jenefir White">
+                <figcaption>
+                <h3>Concours Deltaplane</h3>
+                <p>Adresse : Gorges de l'Ardéches</p>
+                <p>Ville : Annonay</p>
+                </figcaption>
+            </figure>
+        </div> <!-- Grid--> 
+    </section>
+<br>
+<br>
 {% endblock %}
 
-{% block annonces5 %}
-{% endblock %}
