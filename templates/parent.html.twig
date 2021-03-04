@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
     <link rel="stylesheet" href="css/styles_bruno.css">
+     <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}">
+
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     {% block carte1 %}
     {% endblock %}
@@ -13,7 +15,7 @@
 <body>
     <header>
         <nav>
-            <a><img src="../uploads/images/logo.png" alt="logo"></a>
+            <a><img src="uploads/images/logo.png" alt="logo"></a>
             <a href="{{ path('index') }}">CONCEPT</a>
             <a href="{{ path('defis') }}">DERNIERS_DEFIS</a>
             <a href="{{ path('blog') }}">BLOG</a>
@@ -94,28 +96,28 @@
     <footer>
     <nav class="footerColor">
         <li><h2>NOUS SUIVRE : </h2></li>
-        <li><a href="https://facebook.com"><i class="lab la-facebook-f"></i></a></li>
-        <li><a href="https://twitter.com"><i class="lab la-twitter"></i></a></li>
-        <li><a href="https://instagram.com"><i class="lab la-instagram"></i></a></li>
-        <li><a href="https://youtube.com"><i class="lab la-youtube"></i></a></li>
-        <li><a href="https://pinterest.com"><i class="lab la-pinterest"></i></li>
+        <li><a href="https://facebook.com"><img src="uploads/svg/facebook.svg" alt="facebook"></a></li>
+        <li><a href="https://twitter.com"><img src="uploads/svg/twitter.svg" alt="facebook"></a></li>
+        <li><a href="https://instagram.com"><img src="uploads/svg/instagram.svg" alt="facebook"></a></li>
+        <li><a href="https://youtube.com"><img src="uploads/svg/youtube.svg" alt="facebook"></a></li>
+        <li><a href="https://pinterest.com"><img src="uploads/svg/pinterest.svg" alt="facebook"></li>
     </nav>
     <section class="colorSection">
     <article>
-        <h2>SPORTIN</h2>
+        <h2 id="orange" >SPORTIN</h2>
         <li><a href="#">Connexion</a></li>
         <li><a href="#">Inscription</a></li>
         <li><a href="{{ path('index') }}">Concept</a></li>
         <li><a href="{{ path('defis') }}">Derniers défis</a></li>
     </article>
     <article>
-        <h2>Communauté</h2>
+        <h2 id="orange">Communauté</h2>
         <li><a href="#">Avis & témoignages</a></li>
         <li><a href="#">Le groupe Facebook</a></li>
         <li><a href="#">Notre chaine youtube</a></li>
     </article>
     <article>
-        <h2>Informations</h2>
+        <h2 id="orange">Informations</h2>
         <li><a href="{{ path('contact') }}">Contact</a></li>
         <li><a href="#">A propos</a></li>
         <li><a href="{{ path('faq') }}">FAQ</a></li>

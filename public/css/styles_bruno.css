@@ -2,7 +2,8 @@
     text-decoration: none;
 }
 
-nav li {
+
+nav li{
     display: inline-block;
     text-decoration: none;
 }
@@ -14,19 +15,20 @@ footer section article {
 }
 
 .footerColor{
-    background-color: chocolate;
+    background-color: #fc9d44;
     color: black;
 
 }
 
 .colorSection{
-    background-color: rgb(71, 165, 243);
+    background-color: #386cfc;
     color: black;
 }
 
 .diapo{
     height: 100vh;
-    color: black;  
+    background-color: #386cfc; 
+    text-align: center; 
 }
 
 .diapo__image{
@@ -48,7 +50,7 @@ footer section article {
 }
 
 #bleu{
-    color: rgb(81, 81, 240);
+    color: #386cfc;
 }
 
 #blanc{
@@ -56,21 +58,33 @@ footer section article {
 }
 
 #orange{
-    color: tomato;
+    color: #fc9d44;
 }
 
-article nav li{
-  
-    padding:1rem;
-    margin:0.5rem;
-    width: calc( 100% / 3 - 1rem);  /* on enleve 2x margin */
-}
-
-.diapo2 {
+#contener{
     display: flex;
-    flex-wrap: wrap;
-    width:100%;
+    /* text-align: center; */
+    align-items: center;
 }
+
+#page2{
+    margin-top: 5%; 
+}
+
+#image{
+    width: 100%;
+    height: 100%;
+}
+
+#button{
+    background-color: #386cfc;
+    border-radius: 7%;
+    padding : 2%;
+    color: #fc9d44;
+}
+
+
+
 
 
 

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/blog')]
+#[Route('/blog')]
 class BlogController extends AbstractController
 {
     #[Route('/', name: 'blog_index', methods: ['GET'])]

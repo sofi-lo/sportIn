@@ -65,4 +65,18 @@ class SiteSportInController extends AbstractController
             'controller_name' => 'SiteSportInController',
         ]);
     }
+    #[Route('/amis', name: 'amis')]
+    public function amis(): Response
+    {
+        return $this->render('site_sport_in/amis.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
+    #[Route('/partager', name: 'partager')]
+    public function partager(): Response
+    {
+        return $this->render('site_sport_in/partager.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
 }

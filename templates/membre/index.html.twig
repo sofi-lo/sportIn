@@ -9,21 +9,23 @@
         <div class="banniere">
       <!-- bannière -->
       
-            <img class="diapo__banniere" src="../uploads/images/photo1.PNG" alt="photo-fond">
-            <img class="diapo__profile" src="../uploads/images/photo2.PNG" alt="photo-profil">
+            <img class="diapo__banniere" src="{{ asset('../uploads/images/imagep.jpg') }}" alt="photo-fond">
+            <img class="diapo__profile" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
             <h2 class="pseudo"> {{ app.user.username }}</h2>
+            <p>{{ app.user.birthDate|date('d-m-Y ') }}</p>
+            <p>{{ app.user.description }}</p>
         </div><!-- bannière -->
     
          <nav>
             <div>
-            <a href="{{ path('membre') }}">PROFIL</a>
-            <a href="{{ path('membre') }}">AMIS</a>
+            <a href="{{ path('user_new') }}">PROFIL</a>
+            <a href="{{ path('amis') }}">AMIS</a>
             <a href="{{ path('defis') }}">DEFIS REALISEES</a>
             <a href="{{ path('membre') }}">EVENEMENTS PARTICIPES</a>
             </div>
             <div>
             <a href=""></a>
-            <a href="{{ path('membre') }}">PARTAGER</a>
+            <a href="{{ path('partager') }}">PARTAGER</a>
             </div>
         </nav>
        </header>
@@ -73,8 +75,11 @@
                         <p>07/28 xp</p>  
                     </div>
                 </article>
-      <button class="btn défis">CREER UN DEFIS</button>
-      <button class="btn défis">CREER UN EVENEMENT</button>
+                
+      
+     <button> <a href="{{ path('challenge_new') }}">créer un défi</a></button>
+     <button> <a href="{{ path('event_new') }}">créer un événement</a></button>
+      
     
     </section>
   </main><!-- fin du corps -->
