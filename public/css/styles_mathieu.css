@@ -10,10 +10,12 @@ a {
     text-decoration: none;
 }
 
-
-
 .container_log {
     display: flex;
+    width: 1050px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 
