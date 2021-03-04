@@ -13,8 +13,8 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
+            // ->add('roles')
+            // ->add('password')
             ->add('pseudo')
             ->add('xpPoints')
             ->add('level')
@@ -23,6 +23,7 @@ class UserType extends AbstractType
             ->add('createdAt')
             ->add('isVerified')
             ->add('birthDate')
+            ->add('description')
         ;
     }
 

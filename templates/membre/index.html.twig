@@ -12,13 +12,13 @@
             <img class="diapo__banniere" src="{{ asset('../uploads/images/photo1.PNG') }}" alt="photo-fond">
             <img class="diapo__profile" src="{{ asset('../uploads/images/photo1.PNG') }}" alt="photo-profil">
             <h2 class="pseudo"> {{ app.user.username }}</h2>
-            <p>age</p>
-            <p>Description</p>
+            <p>{{ app.user.birthDate|date('d-m-Y ') }}</p>
+            <p>{{ app.user.description }}</p>
         </div><!-- bannière -->
     
          <nav>
             <div>
-            <a href="{{ path('membre') }}">PROFIL</a>
+            <a href="{{ path('user_new') }}">PROFIL</a>
             <a href="{{ path('amis') }}">AMIS</a>
             <a href="{{ path('defis') }}">DEFIS REALISEES</a>
             <a href="{{ path('membre') }}">EVENEMENTS PARTICIPES</a>
