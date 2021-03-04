@@ -2,15 +2,15 @@
      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
 
- .logo_sportin{
-    position: absolute;
-    left: 46.46%;
-    right: 46.32%;
-    top: 8.4%;
-    bottom: 89.94%;
-}
+ .logo_sportin {
+     position: absolute;
+     left: 46.46%;
+     right: 46.32%;
+     top: 8.4%;
+     bottom: 89.94%;
+ }
 
-.titre {
+ .titre {
      color: #FC9D44;
      font-style: normal;
      font-weight: bold;
@@ -24,13 +24,11 @@
      margin-bottom: 2rem;
      display: flex;
      flex-direction: column;
-
  }
 
-.container{
-    color: #386CFC;
-
-}
+ .registration_formulaire {
+     color: #386CFC;
+ }
 
  .pseudo {
      border: 1px solid #386CFC;
@@ -54,4 +52,11 @@
      border: 1px solid #386CFC;
      box-sizing: border-box;
      border-radius: 10px;
+ }
+
+ .btn_formulaire {
+    background: #F79C3C;
+    border: 1px solid #18A0FB;
+    box-sizing: border-box;
+    border-radius: 10px;
  }
