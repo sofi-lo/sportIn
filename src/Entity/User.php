@@ -103,11 +103,6 @@ class User implements UserInterface
      */
     private $challenge;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Blog::class, cascade={"persist", "remove"})
-     */
-    private $blog;
-
     public function __construct()
     {
         $this->event = new ArrayCollection();
@@ -368,18 +363,6 @@ class User implements UserInterface
     public function removeChallenge(Challenge $challenge): self
     {
         $this->challenge->removeElement($challenge);
-
-        return $this;
-    }
-
-    public function getBlog(): ?Blog
-    {
-        return $this->blog;
-    }
-
-    public function setBlog(?Blog $blog): self
-    {
-        $this->blog = $blog;
 
         return $this;
     }
