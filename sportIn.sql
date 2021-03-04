@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 01 mars 2021 à 16:03
+-- Généré le : jeu. 04 mars 2021 à 06:15
 -- Version du serveur :  5.7.24
--- Version de PHP : 8.0.2
+-- Version de PHP : 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,6 +52,14 @@ CREATE TABLE `category` (
   `category_event` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Déchargement des données de la table `category`
+--
+
+INSERT INTO `category` (`id`, `type`, `xp_events`, `category_sport`, `category_event`) VALUES
+(1, 'test1616', 2, 'ski', 'événement'),
+(2, 'test1617', 2, 'parachutisme', 'Défis');
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +78,13 @@ CREATE TABLE `challenge` (
   `date_validation` datetime NOT NULL,
   `date_fin` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `challenge`
+--
+
+INSERT INTO `challenge` (`id`, `type`, `pseudo`, `participant`, `organisateur`, `xp_winner`, `arbitre`, `created_at`, `date_validation`, `date_fin`) VALUES
+(1, 'test1606', 'lo', 1, 1, 2, 1, '2021-03-02 00:00:00', '2021-04-01 00:00:00', '2021-12-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -98,7 +113,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210226102751', '2021-02-26 10:27:57', 100),
 ('DoctrineMigrations\\Version20210301134719', '2021-03-01 13:54:46', 1478),
 ('DoctrineMigrations\\Version20210301135335', '2021-03-01 15:31:59', 967),
-('DoctrineMigrations\\Version20210301152210', '2021-03-01 15:34:01', 801);
+('DoctrineMigrations\\Version20210301152210', '2021-03-01 15:34:01', 801),
+('DoctrineMigrations\\Version20210303160407', '2021-03-03 16:04:56', 1029);
 
 -- --------------------------------------------------------
 
@@ -117,6 +133,14 @@ CREATE TABLE `event` (
   `user_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `event`
+--
+
+INSERT INTO `event` (`id`, `title`, `contents`, `date_events`, `categories_events`, `member_players`, `xp_events`, `user_id`, `created_at`) VALUES
+(1, 'Match foot', 'match en nocturne', '2021-03-04 00:00:00', 'événements', 10, 1, 1, '2020-03-03 00:00:00'),
+(2, 'courir', 'marathon', '2021-05-12 00:00:00', 'challange', 1, 3, 1, '2021-03-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -137,8 +161,18 @@ CREATE TABLE `user` (
   `created_at` datetime NOT NULL,
   `is_verified` tinyint(1) NOT NULL,
   `birth_date` datetime NOT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `level`, `nb_events`, `rgpd`, `created_at`, `is_verified`, `birth_date`, `gender`, `description`) VALUES
+(1, 'fff@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$U2hmcXFwOU42VjFDSHV0Mw$8ISp+T2aZXVuQ3AP+Pyz1QrFxQb3nEEfEEfmIGD4D8E', 'fff', 0, 0, 0, 1, '2021-03-03 08:46:12', 0, '1957-01-01 00:00:00', 'Homme', ''),
+(2, 'lo@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$UE83dFo1TDdudGF4NGIzeQ$3aU8SfgXJ+Na6zA79R7x3o6OAknsiazG+SZHRjvXtLo', 'lo', 0, 0, 0, 1, '2021-03-03 09:22:36', 0, '1958-01-01 00:00:00', 'Femme', ''),
+(3, 'lolo@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$WUdCanRFTDVMd04wLjA2TQ$q/q77SsBPOq3DIjZupR7humpIxhsqEUGlC8gS4P230I', 'lolo', 0, 0, 0, 1, '2021-03-03 09:28:23', 0, '1950-01-01 00:00:00', 'Homme', '');
 
 --
 -- Index pour les tables déchargées
@@ -195,25 +229,25 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT pour la table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `challenge`
 --
 ALTER TABLE `challenge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
