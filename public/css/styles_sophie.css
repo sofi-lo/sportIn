@@ -9,12 +9,10 @@
     --white_color: #F5F5F5 ;
     --black_color: #131417 ;
   }
-h2{
-    color:  #386CFC;
-}
-header{
+
+/* header{
     font-weight: 400;
-}
+} */
 
 /*----------- slider-------------  */
 .banniere{
@@ -54,9 +52,10 @@ header{
 /*  nav banniere */
 .nav_banniere{
   background-color: #386CFC; 
-  /* width: 100%;  */
+  width: 100%; 
   display: flex;
   justify-content: space-between;
+  
   
 }
 
@@ -70,4 +69,27 @@ header{
 
 }
 
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    
+}
 
+main article{
+    background-color: var(--secondary_color);
+    border-radius: 10px;  
+    margin: 10px 10px;
+    padding: 20px; 
+    color: white;
+    line-height: 3;
+}
+
+
+
+main li{
+    list-style-type: none;
+    display: inline;
+    margin-left: 50px;
+
+} 
