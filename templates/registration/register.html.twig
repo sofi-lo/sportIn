@@ -8,10 +8,12 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	<main style="margin-left: auto; margin-right: auto; width: 50%; text-align: center; margin-top: 100px" ;>
+	<main style="margin-left: auto; margin-right: auto; width: 100%; text-align: center; margin-top: 100px;
+    left: 50%;
+    " ;>
 
 
-		<a href="#" class="logo_sportin" style="color: #386CFC; text-decoration: none;font-style: normal; font-weight: bold;  font-size: 24px" ;>SPORT<span style="color: #FC9D44;">IN</span>
+		<a href="{{ path('index') }}" class="logo_sportin" style="color: #386CFC; text-decoration: none;font-style: normal; font-weight: bold;  font-size: 24px" ;>SPORT<span style="color: #FC9D44;">IN</span>
 		</a>
 
 		<section class="entete">
@@ -19,8 +21,8 @@
 			<p class="rapide_facile" style="color: #386CFC; font-weight: bold; font-size: 13px">C'est rapide et Façile</p>
 		</section>
 
-		<section class="registration_formulaire">
-			<section style="border: 2px solid #FC9D44; box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0,0,0,0.25); border-radius: 10px; margin-left: 30%;  margin-right: 30%; " ;>
+		<section class="registration_formulaire" style="position: absolute; width: 100% ;margin-left:auto; margin-right: auto">
+			<section style="border: 2px solid #FC9D44; box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0,0,0,0.25); border-radius: 10px;" ;>
 				{{ form_start(registrationForm) }}
 
 				<section class="pseudo" style="margin: 20px">{{ form_row(registrationForm.pseudo) }}</section>
@@ -45,6 +47,8 @@
 
 				<button type="submit" class="btn_formulaire">M'inscrire</button>
 				{{ form_end(registrationForm) }}
+
+                <p style="color: #386CFC; font-weight: bold; font-size: 17px">Vous avez déja un compte? <a href="{{ path('app_login') }}" style="text-decoration: none; color: #FC9D44;">Me connecter</a></p>
 			</section>
 		</section>
 

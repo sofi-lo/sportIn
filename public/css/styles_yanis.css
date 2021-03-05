@@ -1,7 +1,9 @@
  * {
      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
-
+form[name=registration_form] input::placeholder {
+    color: blue;
+}
  .logo_sportin {
      position: absolute;
      left: 46.46%;
@@ -60,3 +62,10 @@
     box-sizing: border-box;
     border-radius: 10px;
  }
+
+ /* Telephone */
+@media screen and (max-width: 400px) {
+    .form_inscription{
+        width: 300px;
+    }
+}
