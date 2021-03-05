@@ -1,11 +1,102 @@
 {% extends 'parent.html.twig' %}
 
 {% block titre1 %}
-<h1>Page blog</h1>
+<br>
+<section>
+    <div class="diapo1">
+        <img class="diapo__image" src="{{ asset('uploads/images/banniere event.jpg')}}" alt="Fond">
+        <div class="diapo__event">
+        <h1><pan id="bleu">Article du blog<pan></h1>
+        <p><pan id="orange"> sur les événements passés, présents et futurs :</pan></p> 
+    <label>
+</section>
+<br>
 {% endblock %}
 
-{% block commentaire1 %}
-<p>blog à venir</p>
+{% block titre2 %}
+<section>
+        <h2 class="blog_title" id="orange">Article blog de la semaine dernière:</h2>
+        <div class="blog_grid"> <!-- Grid-->
+            <figure class="blog_member">
+                <div id="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil1.jpg')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                    <h3>Trophée de l'aiguille</h3>
+                    <p>On y était, c'était top, dur au départ, plus facile dans la dernière partie.</p>
+                    <p>Ville : Etretat</p>
+                </figcaption> 
+            </figure>
+            <figure class="blog_member">
+                <div id="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil2.jpg')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                    <h3>Loto sportif</h3>
+                    <p>Bonne ambiance, repas très festif qui a duré jusqu'à tard dans la nuit</p>
+                    <p>Ville : Las Vegas</p>
+                </figcaption> 
+            </figure>
+                        </figure>
+            <figure class="blog_member">
+                <div id="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil3.jpg')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                    <h3>Gouter anglais</h3>
+                    <p>Ambiance bon enfant, style petit doigt levé pour boire "the cup of tea".</p>
+                    <p>Ville : Londres</p>
+                </figcaption> 
+            </figure>
+        </div>
+    </section> 
+{% endblock %}
+
+{% block titre3 %}
+<br>
+<section>
+        <h2 class="blog_title" id="orange">Article blog de la semaine prochaine:</h2>
+        <div class="blog_grid"> <!-- Grid-->
+            <figure class="blog_member">
+                <div class="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil5.webp')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                <h3>Lancé du sachet de Trophée</h3>
+                <p>Les épaules ont souffert par le poids répété des sachets, mais les athlétes ont tenu le coup.</p>
+                <p>Ville : Londres</p>
+                </figcaption> 
+            </figure>
+            <figure class="blog_member">
+                <div class="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil6.webp')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                <h3>Jeux celtiques</h3>
+                <p>Adresse : Il y a eu de sacrés levés de menhir et quelques record de battus, vivement l'année prochaine.</p>
+                <p>Ville : Erquy</p>
+                </figcaption> 
+            </figure>
+                        </figure>
+            <figure class="blog_member">
+                <div class="image_blog">
+                <img class="blog_picture" src="{{ asset('uploads/images/photo_event.png')}}" alt="Reena Scot">
+                <img class="blog_picture" src="{{ asset('uploads/images/profil4.jpg')}}" alt="Reena Scot">
+                </div>
+                <figcaption class="blog_text">
+                <h3>Descente libre</h3>
+                <p>Adresse : Bellles descentes malgrès le manque total de neige, heureusement les congélateurs étaient pleins.</p>
+                <p>Ville : Chamonix</p>
+                </figcaption> 
+            </figure>
+        </div>
+    </section> 
+    <br> 
 {% endblock %}
 
 {% block photo1 %}
