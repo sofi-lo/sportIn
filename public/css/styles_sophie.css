@@ -110,3 +110,20 @@
     text-transform: uppercase;
     font-weight: bold; 
 }
+
+/* 
+#profil_symbol{
+    color: white;
+} */
+
+.profil_symbol__sport{
+    color:white ;
+    display: flex;
+    flex-direction: column;
+}
+
+.profil_li{
+    display: inline-block;
+    justify-content: space-between;
+    
+}
