@@ -64,6 +64,21 @@
     justify-content: space-around;
     line-height: 1;
 }
+.profil-progression #file{
+        padding-right: 10px;
+        font-size: 1rem;
+        width:100% ;
+}
+
+.profil-progression p{
+    color: #FC9D44;
+}
+.profil_niveau{
+display: flex;
+justify-content: space-between;
+padding: 0px 20px;
+}
+
 
 .bouton_creer {
     background-color: white;
