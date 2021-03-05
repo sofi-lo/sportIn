@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,90 +7,78 @@
 :root {
     --primary_color: #FC9D44;
     --secondary_color: #386CFC;
-    --white_color: #F5F5F5 ;
-    --black_color: #131417 ;
-  }
-
-
+    --white_color: #F5F5F5;
+    --black_color: #131417;
+}
 
 /*-----------profil slider-------------  */
-.profil_diapo__banniere{
+.profil_diapo__banniere {
 
     /* width: 100%; */
     margin: auto;
     position: relative;
     height: 450px
-    
-
 }
-.profil_description{
-    color:  #FC9D44;
+
+.profil_description {
+    color: #FC9D44;
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    /* top: 65%; */
     margin: 20px;
-    transform: translate(00%,-120%);
+    transform: translate(00%, -120%);
     height: 170px;
 }
 
-.profil_description p:last-of-type, .profil_nav__banniere{
+.profil_description p:last-of-type,
+.profil_nav__banniere {
     display: none;
 }
 
-.profil_diapo__profil{
+.profil_diapo__profil {
     /* Positionnement  */
     border: 4px solid #386CFC;
-    border-radius: 15px 15px 0px 0px;  
+    border-radius: 15px 15px 0px 0px;
     width: 170px;
     margin-right: 20px;
 }
 
-.profil_texte__profil
-{
-     line-height: 1.5;
+.profil_texte__profil {
+    line-height: 1.5;
 }
+
 /* _____________________________________________________________ */
 
-
-
-
-
-.profil_detail article{
+.profil_detail article {
     background-color: var(--secondary_color);
-    border-radius: 10px;  
+    border-radius: 10px;
     margin: 10px 10px;
-    padding: 20px; 
+    padding: 20px;
     color: white;
     line-height: 2;
 }
 
-
-
-.profil_detail li{
+.profil_detail li {
     list-style-type: none;
     display: inline;
     justify-content: space-around;
-    /* margin-left: 5px; */
     line-height: 1;
+}
 
-} 
-
-.bouton_creer{
+.bouton_creer {
     background-color: white;
     width: 99%;
     height: 40px;
     border: 4px solid #FC9D44;
-    border-radius: 5px ; 
+    border-radius: 5px;
     margin-top: 10px;
     box-shadow: 1px 2px 0px rgb(238, 235, 235);
 }
 
-
-.bouton_creer a{
-    color:  #FC9D44; 
+.bouton_creer a {
+    color: #FC9D44;
     text-transform: uppercase;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* 
@@ -98,70 +86,61 @@
     color: white;
 } */
 
-.profil_symbol__sport{
-    color:white ;
+.profil_symbol__sport {
+    color: white;
     display: flex;
     flex-direction: column;
 }
 
-.profil_li{
+.profil_li {
     display: inline-block;
     margin: 0 2rem;
-    
 }
 
-.profil_defis{
+.profil_defis {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-
-
-
 /* 
 Media queries
 */
-    /* 750px => tablette paysage || desktop */
-    @media screen and (min-width: 750px){    
-        
-        .profil_diapo__banniere{
+/* 750px => tablette paysage || desktop */
+@media screen and (min-width: 750px) {
 
-            width: 100%;   
+    .profil_diapo__banniere {
+        width: 100%;
     }
 
-    .profil_description{
+    .profil_description {
         width: 65%;
-        
-    } 
-    .profil_description p:last-of-type{
+    }
+
+    .profil_description p:last-of-type {
         display: flex;
     }
 
     /*  nav banniere */
-.profil_nav__banniere{
-    background-color: #386CFC; 
-    width: 100%; 
-    display: flex;
-    justify-content: space-between;
-    
-    
-  }
-  
-  .profil_nav__banniere a{
-      color: white;
-      text-transform: uppercase;
-      font-weight:bold;
-      display: inline-block;
-          margin: 0 1rem;
-          padding: 1.3rem;
-  
-  }
-  .profil_detail{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    box-shadow: 2px 6px;
-    
-}
-}
+    .profil_nav__banniere {
+        background-color: #386CFC;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
 
+    .profil_nav__banniere a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 1rem;
+        padding: 1.3rem;
+    }
+
+    .profil_detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        box-shadow: 2px 6px;
+    }
+}

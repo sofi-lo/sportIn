@@ -13,16 +13,16 @@
 
 			<img class="profil_diapo__banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
 
-      <div class="profil_description">
-			<img class="profil_diapo__profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
+			<div class="profil_description">
+				<img class="profil_diapo__profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
 
-			<div class="profil_texte__profil">
-				<h2 class="pseudo">
-					{{ app.user.username }}</h2>
-				<p>{{ app.user.birthDate|date('Y ') }}</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam .</p>
+				<div class="profil_texte__profil">
+					<h2 class="pseudo">
+						{{ app.user.username }}</h2>
+					<p>{{ app.user.birthDate|date('Y ') }}</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam .</p>
+				</div>
 			</div>
-      </div>
 			<!-- texte_profil -->
 
 		</div>
@@ -46,8 +46,8 @@
 		<section>
 			<article>
 				<h2>à propos de moi</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
-						</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+				</p>
 				<p>{{ app.user.description }}</p>
 			</article>
 			<article>
@@ -62,67 +62,71 @@
 					</div>
 					<div class="profil_li">
 						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/football.svg') }}" alt="symbol_football">Football</li>
-            </div>
-						<div class="profil_li">
+					</div>
+					<div class="profil_li">
 						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/muscu.svg') }}" alt="symbol_musculation">Musculation</li>
-            </div>
-						<div class="profil_li">
-							<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/running.svg') }}" alt="symbol_running">running</li>
-						</div>
-						<div class="profil_li">
-							<li>Plongée sous-marine</li>
-						</div>
-					</ul>
-				</article>
-
-
-				<article>
-					<div>
-						<h2>Défis en cours  {{ app.user.nbEvents }} </h2>
-						
 					</div>
-					<div class="profil_defis">
-          <div>
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/running.svg') }}" alt="symbol_running">running</li>
+					</div>
+					<div class="profil_li">
+						<li>Plongée sous-marine</li>
+					</div>
+				</ul>
+			</article>
+
+
+			<article>
+				<div>
+					<h2>Défis en cours
+						{{ app.user.nbEvents }}
+					</h2>
+
+				</div>
+				<div class="profil_defis">
+					<div>
 						<h3>Titre du défis</h3>
-                <p>Créer le 1 mars 2021 </p>
-							{# <p>Créer le {{ app.challenge.createdAt }} </p> #}
-							<p>Accepter le </p>
-              {# <p>Accepter le {{ app.challenge.dateValidation }}</p> #}
-            
-
-</div>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+						<p>Créer le 1 mars 2021
 						</p>
-            </div>
-							<p>Nombre de point mis en jeux : 10 xp</p>
-              {# <p>Nombre de point mis en jeux : {{ app.challenge.xpWinner }}</p> #}
-					
-					
-				</article>
-			</section>
-			<section>
-				<article>
-					<h2>progression</h2>
-					<img src="./img" alt="image niveau">
-					<div>
-						<p>Prochain</p>
-						<p>07/28 xp</p>
+						{# <p>Créer le {{ app.challenge.createdAt }} </p> #}
+						<p>Accepter le
+						</p>
+						{# <p>Accepter le {{ app.challenge.dateValidation }}</p> #}
+
+
 					</div>
-				</article>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+					</p>
+				</div>
+				<p>Nombre de point mis en jeux : 10 xp</p>
+				{# <p>Nombre de point mis en jeux : {{ app.challenge.xpWinner }}</p> #}
 
 
-				<button class="bouton_creer">
-					<a href="{{ path('challenge_new') }}">créer un défi</a>
-				</button>
-				<button class="bouton_creer">
-					<a href="{{ path('event_new') }}">créer un événement</a>
-				</button>
+			</article>
+		</section>
+		<section>
+			<article>
+				<h2>progression</h2>
+				<img src="./img" alt="image niveau">
+				<div>
+					<p>Prochain</p>
+					<p>07/28 xp</p>
+				</div>
+			</article>
 
 
-			</section>
-		</main>
-		<!-- fin du corps -->
+			<button class="bouton_creer">
+				<a href="{{ path('challenge_new') }}">créer un défi</a>
+			</button>
+			<button class="bouton_creer">
+				<a href="{{ path('event_new') }}">créer un événement</a>
+			</button>
 
 
-	{% endblock %}
+		</section>
+	</main>
+	<!-- fin du corps -->
+
+
+{% endblock %}
