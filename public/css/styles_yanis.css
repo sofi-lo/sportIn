@@ -1,8 +1,32 @@
  * {
      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
-form[name=registration_form] input::placeholder {
-    color: blue;
+
+ form[name=registration_form] input::placeholder {
+     color: #386CFC;
+     text-align: center;
+     font-weight: bold;
+ }
+
+ form[name=registration_form] input{
+    width: 90%;
+    height: 35px;
+    border: 1px solid #386CFC;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#registration_form_birthDate_month{
+     color: #386CFC;
+ }
+ #registration_form_birthDate_day{
+    color: #386CFC;
+}
+#registration_form_birthDate_year{
+    color: #386CFC;
+}
+#registration_form_gender{
+    color: #386CFC;
 }
  .logo_sportin {
      position: absolute;
@@ -32,40 +56,23 @@ form[name=registration_form] input::placeholder {
      color: #386CFC;
  }
 
- .pseudo {
-     border: 1px solid #386CFC;
-     box-sizing: border-box;
-     border-radius: 10px;
- }
-
- .email {
-     border: 1px solid #386CFC;
-     box-sizing: border-box;
-     border-radius: 10px;
- }
-
- .mdp {
-     border: 1px solid #386CFC;
-     box-sizing: border-box;
-     border-radius: 10px;
- }
-
- .birth_date {
-     border: 1px solid #386CFC;
-     box-sizing: border-box;
-     border-radius: 10px;
- }
-
  .btn_formulaire {
-    background: #F79C3C;
-    border: 1px solid #18A0FB;
-    box-sizing: border-box;
-    border-radius: 10px;
+     background: #F79C3C;
+     border: 1px solid #18A0FB;
+     box-sizing: border-box;
+     border-radius: 10px;
  }
+
 
  /* Telephone */
-@media screen and (max-width: 400px) {
-    .form_inscription{
-        width: 300px;
+ @media screen and (min-width: 400px) {
+     .main_inscr {
+         width: 30%;
+     }
+ }
+
+ @media screen and (max-width: 400px) {
+    .logo_sportin{
+        transform: translate(-110%,0%);
     }
-}
+ }
