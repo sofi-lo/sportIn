@@ -73,6 +73,6 @@
 
  @media screen and (max-width: 400px) {
     .logo_sportin{
-        transform: translate(-110%,0%);
+        transform: translate(-130%,-50%);
     }
  }
