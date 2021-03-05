@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 04 mars 2021 à 06:15
+-- Généré le : jeu. 04 mars 2021 à 15:44
 -- Version du serveur :  5.7.24
--- Version de PHP : 8.0.1
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -114,7 +114,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210301134719', '2021-03-01 13:54:46', 1478),
 ('DoctrineMigrations\\Version20210301135335', '2021-03-01 15:31:59', 967),
 ('DoctrineMigrations\\Version20210301152210', '2021-03-01 15:34:01', 801),
-('DoctrineMigrations\\Version20210303160407', '2021-03-03 16:04:56', 1029);
+('DoctrineMigrations\\Version20210303160407', '2021-03-03 16:04:56', 1029),
+('DoctrineMigrations\\Version20210304154148', '2021-03-04 15:42:03', 17072);
 
 -- --------------------------------------------------------
 
@@ -145,6 +146,17 @@ INSERT INTO `event` (`id`, `title`, `contents`, `date_events`, `categories_event
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `event_category`
+--
+
+CREATE TABLE `event_category` (
+  `event_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `user`
 --
 
@@ -162,17 +174,30 @@ CREATE TABLE `user` (
   `is_verified` tinyint(1) NOT NULL,
   `birth_date` datetime NOT NULL,
   `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NULL
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Déchargement des données de la table `user`
+-- Structure de la table `user_challenge`
 --
 
-INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `level`, `nb_events`, `rgpd`, `created_at`, `is_verified`, `birth_date`, `gender`, `description`) VALUES
-(1, 'fff@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$U2hmcXFwOU42VjFDSHV0Mw$8ISp+T2aZXVuQ3AP+Pyz1QrFxQb3nEEfEEfmIGD4D8E', 'fff', 0, 0, 0, 1, '2021-03-03 08:46:12', 0, '1957-01-01 00:00:00', 'Homme', ''),
-(2, 'lo@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$UE83dFo1TDdudGF4NGIzeQ$3aU8SfgXJ+Na6zA79R7x3o6OAknsiazG+SZHRjvXtLo', 'lo', 0, 0, 0, 1, '2021-03-03 09:22:36', 0, '1958-01-01 00:00:00', 'Femme', ''),
-(3, 'lolo@sfr.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$WUdCanRFTDVMd04wLjA2TQ$q/q77SsBPOq3DIjZupR7humpIxhsqEUGlC8gS4P230I', 'lolo', 0, 0, 0, 1, '2021-03-03 09:28:23', 0, '1950-01-01 00:00:00', 'Homme', '');
+CREATE TABLE `user_challenge` (
+  `user_id` int(11) NOT NULL,
+  `challenge_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user_event`
+--
+
+CREATE TABLE `user_event` (
+  `user_id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Index pour les tables déchargées
@@ -182,7 +207,8 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `
 -- Index pour la table `blog`
 --
 ALTER TABLE `blog`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_C0155143A76ED395` (`user_id`);
 
 --
 -- Index pour la table `category`
@@ -209,11 +235,35 @@ ALTER TABLE `event`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `event_category`
+--
+ALTER TABLE `event_category`
+  ADD PRIMARY KEY (`event_id`,`category_id`),
+  ADD KEY `IDX_40A0F01171F7E88B` (`event_id`),
+  ADD KEY `IDX_40A0F01112469DE2` (`category_id`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
+
+--
+-- Index pour la table `user_challenge`
+--
+ALTER TABLE `user_challenge`
+  ADD PRIMARY KEY (`user_id`,`challenge_id`),
+  ADD KEY `IDX_D7E904B5A76ED395` (`user_id`),
+  ADD KEY `IDX_D7E904B598A21AC6` (`challenge_id`);
+
+--
+-- Index pour la table `user_event`
+--
+ALTER TABLE `user_event`
+  ADD PRIMARY KEY (`user_id`,`event_id`),
+  ADD KEY `IDX_D96CF1FFA76ED395` (`user_id`),
+  ADD KEY `IDX_D96CF1FF71F7E88B` (`event_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -247,7 +297,38 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `blog`
+--
+ALTER TABLE `blog`
+  ADD CONSTRAINT `FK_C0155143A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Contraintes pour la table `event_category`
+--
+ALTER TABLE `event_category`
+  ADD CONSTRAINT `FK_40A0F01112469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_40A0F01171F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `user_challenge`
+--
+ALTER TABLE `user_challenge`
+  ADD CONSTRAINT `FK_D7E904B598A21AC6` FOREIGN KEY (`challenge_id`) REFERENCES `challenge` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_D7E904B5A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `user_event`
+--
+ALTER TABLE `user_event`
+  ADD CONSTRAINT `FK_D96CF1FF71F7E88B` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_D96CF1FFA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

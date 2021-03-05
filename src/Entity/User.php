@@ -89,11 +89,6 @@ class User implements UserInterface
     private $Gender;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="users")
      */
     private $event;
@@ -104,9 +99,9 @@ class User implements UserInterface
     private $challenge;
 
     /**
-     * @ORM\OneToOne(targetEntity=Blog::class, cascade={"persist", "remove"})
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $blog;
+    private $description;
 
     public function __construct()
     {
@@ -312,18 +307,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Event[]
      */
@@ -372,14 +355,14 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getBlog(): ?Blog
+    public function getDescription(): ?string
     {
-        return $this->blog;
+        return $this->description;
     }
 
-    public function setBlog(?Blog $blog): self
+    public function setDescription(?string $description): self
     {
-        $this->blog = $blog;
+        $this->description = $description;
 
         return $this;
     }
