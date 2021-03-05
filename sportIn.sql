@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 04 mars 2021 à 15:44
+-- Généré le : ven. 05 mars 2021 à 10:50
 -- Version du serveur :  5.7.24
 -- Version de PHP : 8.0.2
 
@@ -115,7 +115,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20210301135335', '2021-03-01 15:31:59', 967),
 ('DoctrineMigrations\\Version20210301152210', '2021-03-01 15:34:01', 801),
 ('DoctrineMigrations\\Version20210303160407', '2021-03-03 16:04:56', 1029),
-('DoctrineMigrations\\Version20210304154148', '2021-03-04 15:42:03', 17072);
+('DoctrineMigrations\\Version20210304154148', '2021-03-04 15:42:03', 17072),
+('DoctrineMigrations\\Version20210304160024', '2021-03-04 16:01:12', 1584);
 
 -- --------------------------------------------------------
 
@@ -174,8 +175,20 @@ CREATE TABLE `user` (
   `is_verified` tinyint(1) NOT NULL,
   `birth_date` datetime NOT NULL,
   `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `xp_points`, `level`, `nb_events`, `rgpd`, `created_at`, `is_verified`, `birth_date`, `gender`, `description`) VALUES
+(5, 'florian@thauvin.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$TldXRlhBMEFRamxCdE40Mg$gRBLJi5uMvZmnuMoypI/8KQewvJaf/nLqWrE4ke/bj0', 'Flotov', 0, 0, 0, 1, '2021-03-04 16:02:21', 0, '1950-01-01 00:00:00', 'Homme', NULL),
+(6, 'kevin@debruyne.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$OS5nTHFiY1F2SUxmOU51aw$H9QlM3esEsL2WsiwxK6+MSxOJlQsF8EI4lqT1sl6Cd4', 'kdb17', 0, 0, 0, 1, '2021-03-04 20:09:21', 0, '2002-03-13 00:00:00', 'Homme', NULL),
+(7, 'leo@messi.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$ZVZmY20va1pZUFFDaTROUw$zVGJV0qvg+MvlcSSoxnUVuHLJZ4EIEH223SGpC1xUIo', 'LM10', 0, 0, 0, 1, '2021-03-05 10:41:42', 0, '1950-01-01 00:00:00', 'Homme', NULL),
+(8, 'test@.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$MUxJUWJwWENzOXZ4aGhNTQ$GLYFFjbKtLbhdXJKKiwwoq4BH+DJifsiD3kgor6r3aM', 'test', 0, 0, 0, 1, '2021-03-05 10:46:54', 0, '1950-01-01 00:00:00', 'Homme', NULL),
+(9, 'test134@.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$UTlYYjhjcUNFN29sZDd6bA$TlPjMlPW9GE8rZSsto9epjh2pt97QlytTHOHvJLYEIQ', 'test123', 0, 0, 0, 1, '2021-03-05 10:47:29', 0, '1950-01-01 00:00:00', 'Homme', NULL),
+(10, 'test134@free.fr', '[]', '$argon2id$v=19$m=65536,t=4,p=1$NUtyN21JZ1FXRW9vUUlYZA$0Z9i85vTaQ1HrPyN5KXUxRqg7nUDbCpyjL6DI66KLDE', 'test12345645', 0, 0, 0, 1, '2021-03-05 10:48:02', 0, '1950-01-01 00:00:00', 'Homme', NULL);
 
 -- --------------------------------------------------------
 
@@ -297,7 +310,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
