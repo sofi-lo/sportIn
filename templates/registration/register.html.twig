@@ -8,19 +8,20 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	<main style="margin-left: auto; margin-right: auto; width: 50%; text-align: center; margin-top: 100px" ;>
+	<main  class="main_inscr" style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 80px;
+    left: 50%;" ;>
 
 
-		<a href="#" class="logo_sportin" style="color: #386CFC; text-decoration: none;font-style: normal; font-weight: bold;  font-size: 24px" ;>SPORT<span style="color: #FC9D44;">IN</span>
+		<a href="{{ path('index') }}" class="logo_sportin" style="color: #386CFC; text-decoration: none;font-style: normal; font-weight: bold;  font-size: 24px " ;>SPORT<span style="color: #FC9D44;">IN</span>
 		</a>
 
 		<section class="entete">
 			<h1 class="titre">Inscription</h1>
-			<p class="rapide_facile" style="color: #386CFC; font-weight: bold; font-size: 13px">C'est rapide et Façile</p>
+			<p class="rapide_facile" style="color: #386CFC; font-weight: bold; font-size: 13px;">C'est rapide et Façile</p>
 		</section>
 
-		<section class="registration_formulaire">
-			<section style="border: 2px solid #FC9D44; box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0,0,0,0.25); border-radius: 10px; margin-left: 30%;  margin-right: 30%; " ;>
+		<section class="registration_formulaire" style="border: 2px solid #FC9D44; box-sizing: border-box; box-shadow: 0px 4px 4px rgba(0,0,0,0.25); border-radius: 10px; width: 100% ;margin-left:auto; margin-right: auto">
+			
 				{{ form_start(registrationForm) }}
 
 				<section class="pseudo" style="margin: 20px">{{ form_row(registrationForm.pseudo) }}</section>
@@ -43,9 +44,10 @@
             label: "En cochant cette case, vous acceptez nos Conditions générales. Découvrez comment nous recueillons, utilisons et partageons vos données en lisant notre Politique d'utilisation des données et comment nous utilisons les cookies et autres technologies similaires en consultant notre Politique d'utilisation des cookies et vous pouvez à tout moment vous désabonnez. "
         }) }}</section>
 
-				<button type="submit" class="btn_formulaire">M'inscrire</button>
+				<button type="submit" class="btn_formulaire" style="width: 90%; height: 45px; text-transform: uppercase; font-size: 15px">M'inscrire</button>
 				{{ form_end(registrationForm) }}
-			</section>
+
+                <p style="color: #386CFC; font-weight: bold; font-size: 17px">Vous avez déja un compte? <a href="{{ path('app_login') }}" style="text-decoration: none; color: #FC9D44;">Me connecter</a></p>
 		</section>
 
 	</main>

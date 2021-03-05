@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
-    <link rel="stylesheet" href="css/styles_bruno.css">
+    <link rel="stylesheet" href="{{ asset('css/styles_bruno.css') }}">
      <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}">
 
     {# Police #}
@@ -19,13 +19,13 @@
 <body>
     <header>
         <nav>
-            <a><a href="{{ path('index') }}"><img src="{{ asset('uploads/images/logo.png')}}" alt="logo"></a></a>
+            <a><a href="{{ path('index') }}"><img src="{{ asset('uploads/images/logo.png')}}" alt="logo" id="logo"></a></a>
             <a href="{{ path('index') }}">CONCEPT</a>
             <a href="{{ path('defis') }}">DERNIERS_DEFIS</a>
             <a href="{{ path('blog') }}">BLOG</a>
             <a href="{{ path('faq') }}">FAQ</a>
             <a href="{{ path('contact') }}">CONTACT</a>
-            <a href="{{ path('app_register') }}">PARTICIPER AU JEU</a>
+            <a href="{{ path('app_register') }}" id="account" >PARTICIPER AU JEU</a>
         </nav>
             {% if app.user %}
                <div class="mb-3">
@@ -35,18 +35,16 @@
         <nav>
         <a href="{{ path('app_login') }} ">Connexion</a>
         </nav>
-        
-
-
+       
+        {% block diapo %}
+        {% endblock %}
+ 
     </header>
         <section>
-            {% block titre1 %}
-            {% endblock %}
-
             {% block formulaire1 %}
             {% endblock %}
 
-            {% block titre2 %}
+            {% block gamification %}
             {% endblock %}
 
             {% block annonces1 %}
