@@ -43,6 +43,8 @@
 		<section>
 			<article>
 				<h2>à propos de moi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+						</p>
 				<p>{{ app.user.description }}</p>
 			</article>
 			<article>
@@ -73,19 +75,27 @@
 
 				<article>
 					<div>
-						<h2>Défis en cours</h2>
-						<h2>Nombre de défis</h2>
+						<h2>Défis en cours  {{ app.user.nbEvents }} </h2>
+						
 					</div>
-					<div>
+					<div class="profil_defis">
+          <div>
 						<h3>Titre du défis</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+                <p>Créer le 1 mars 2021 </p>
+							{# <p>Créer le {{ app.challenge.createdAt }} </p> #}
+							<p>Accepter le </p>
+              {# <p>Accepter le {{ app.challenge.dateValidation }}</p> #}
+            
+
+</div>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
 						</p>
-						<ul>
-							<li>Créer le "date"</li>
-							<li>Accepter le "date fin"</li>
-							<li>Nombre de point mis en jeux: 10 xp</li>
-						</ul>
-					</div>
+            </div>
+							<p>Nombre de point mis en jeux : 10 xp</p>
+              {# <p>Nombre de point mis en jeux : {{ app.challenge.xpWinner }}</p> #}
+					
+					
 				</article>
 			</section>
 			<section>
