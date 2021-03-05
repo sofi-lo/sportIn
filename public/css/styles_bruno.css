@@ -2,6 +2,9 @@
     text-decoration: none;
 }
 
+/* **********************
+*      page parent      *
+*************************/
 nav li{
     display: inline-block;
     text-decoration: none;
@@ -14,6 +17,9 @@ footer section article {
     text-decoration: none;
 }
 
+/* **********************
+*      page index       *
+*************************/
 .footerColor{
     background-color: #fc9d44;
     color: black;
@@ -23,39 +29,6 @@ footer section article {
 .colorSection{
     background-color: #386cfc;
     color: black;
-}
-
-.diapo{
-    height: 100vh;
-    background-color: #386cfc; 
-    /* text-align: center;  */
-}
-
-.diapo__image{
-    height: 100vh;
-    width: 100%;
-    /*  adaptation de l'image à son conteneur */
-   object-fit: cover; /*quand l'image est dans le HTML*/
-   object-position: center;
-   opacity: 1;
-}
-
-.diapo__text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-90%, -50%);
-    text-align: center;
-    color: rgb(245, 243, 238);
-}
-
-.diapo__event{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* text-align: center; */
-    color: rgb(245, 243, 238);
 }
 
 #bleu{
@@ -91,7 +64,42 @@ footer section article {
     color: #fc9d44;
 }
 
-/* ******page event******** */
+/* **********************
+*      page event       *
+*************************/
+.diapo{
+    height: 100vh;
+    background-color: #386cfc; 
+    text-align: center; 
+}
+
+.diapo__image{
+    height: 100vh;
+    width: 100%;
+    /*  adaptation de l'image à son conteneur */
+   object-fit: cover; /*quand l'image est dans le HTML*/
+   object-position: center;
+   opacity: 1;
+}
+
+.diapo__text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -50%);
+    text-align: center;
+    color: rgb(245, 243, 238);
+}
+
+.diapo__event{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+    color: rgb(245, 243, 238);
+}
+
 .event__grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -122,13 +130,17 @@ footer section article {
 }
 
 #sponsor_ecart{
-    margin-left: 10%;
+    margin-left: 8%;
 }
 
 #sponsor_image{
     max-width: 80%;
-    margin-left: 5%;
+    margin-left: 2%;
 }
+
+/* **********************
+*      page blog        *
+*************************/
 
 
 

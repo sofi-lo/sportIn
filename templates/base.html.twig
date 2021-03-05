@@ -6,11 +6,11 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         
-        <link rel="stylesheet" href="{{ asset('css/styles_yanis.css') }}">
+        {# <link rel="stylesheet" href="{{ asset('css/styles_yanis.css') }}"> #}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> #}
         
-        <link rel="stylesheet" href="{{ asset('css/styles_mathieu.css') }}">
+        {# <link rel="stylesheet" href="{{ asset('css/styles_mathieu.css') }}"> #}
 
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
@@ -29,6 +29,7 @@
             <a href="{{ path('user_index') }}">Users</a>
             <a href="{{ path('app_logout') }}">déconnexion</a>
             {% elseif is_granted('ROLE_USER') %}
+            <a href="{{ path('blog_show') }}">Blog</a>
             <a href="{{ path('concept') }}">annonces</a>
             <a href="{{ path('contact') }}">contact</a>
             {% endif %}
