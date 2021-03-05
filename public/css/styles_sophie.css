@@ -82,7 +82,7 @@
     margin: 10px 10px;
     padding: 20px; 
     color: white;
-    line-height: 3;
+    line-height: 2;
 }
 
 
@@ -108,6 +108,5 @@
 .bouton_creer a{
     color:  #FC9D44; 
     text-transform: uppercase;
-
-    
+    font-weight: bold; 
 }
