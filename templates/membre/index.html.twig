@@ -1,94 +1,132 @@
 {% extends 'parent.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Profil
+{% endblock %}
 
 {% block bodyMembre %}
-    <header>
-      <!-- slider -->
-    
-        <div class="profil_banniere">
-      <!-- bannière -->
-      
-            <img class="profil_diapo__banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
-            <img class="profil_diapo__profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
+	<header>
+		<!-- slider -->
 
-            <div class="profil_texte__profil">
-            <h2 class="pseudo"> {{ app.user.username }}</h2>
-            <p>{{ app.user.birthDate|date('d-m-Y ') }}</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam erat laoreet. Sed sit amet arcu aliquet, molestie justo at, auctor nunc.</p>
-            </div><!-- texte_profil -->
-            
-        </div><!-- bannière -->
-    
-         <nav class="profil_nav__banniere">
-            <div>
-            <a href="{{ path('user_new') }}">profil</a>
-            <a href="{{ path('amis') }}">amis</a>
-            <a href="{{ path('defis') }}">défis réalisés</a>
-            <a href="{{ path('membre') }}">événements participés</a>
-            </div>
-            <div>
-            <a href=""></a>
-            <a href="{{ path('partager') }}">partager</a>
-            </div>
-        </nav>
-       </header>
+		<div
+			class="profil_banniere">
+			<!-- bannière -->
 
-       <main class = "profil_detail">
-    <section>
-      <article>
-          <h2>à propos de moi</h2>
-          <p>{{ app.user.description }}</p>
-    </article>
-    <article>
-          <h2>sports favoris</h2>
-          <ul>
-             <li class="">Football</li>
-              <li class="">Surf</li>
-              <li class="">Escalade</li>
-              <li class="">Ski</li>
-              <li class="">Kayak</li>
-              <li class="">Spéléologie</li>
-              <li class="">Plongée sous-marine</li>
-            </ul>
-    </article>
+			<img class="profil_diapo__banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
 
-  
-      <article>
-            <div>
-            <h2>Défis en cours</h2>
-            <h2>Nombre de défis</h2>
-            </div>
-            <div>
-            <h3>Titre du défis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat </p>
-            <ul>
-             <li >Créer le "date"</li>
-              <li >Accepter le "date fin"</li>
-              <li>Nombre de point mis en jeux: 10 xp</li>
-            </ul>
-            </div>
-      </article>
-  </section>
-  <section>
-      <article>
-            <h2>progression</h2>
-                    <img src="./img" alt="image niveau">
-                    <div>
-                        <p>Prochain</p>
-                        <p>07/28 xp</p>  
-                    </div>
-                </article>
-              
-      
-     <button class= "bouton_creer"> <a href="{{ path('challenge_new') }}">créer un défi</a></button>
-     <button class= "bouton_creer"> <a href="{{ path('event_new') }}">créer un événement</a></button>
-      
-    
-    </section>
-  </main><!-- fin du corps -->
+			<div class="profil_description">
+				<img class="profil_diapo__profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
+
+				<div class="profil_texte__profil">
+					<h2 class="pseudo">
+						{{ app.user.username }}</h2>
+					<p>{{ app.user.birthDate|date('Y ') }}</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam .</p>
+				</div>
+			</div>
+			<!-- texte_profil -->
+
+		</div>
+		<!-- bannière -->
+
+		<nav class="profil_nav__banniere">
+			<div>
+				<a href="{{ path('user_new') }}">profil</a>
+				<a href="{{ path('amis') }}">amis</a>
+				<a href="{{ path('defis') }}">défis réalisés</a>
+				<a href="{{ path('membre') }}">événements participés</a>
+			</div>
+			<div>
+				<a href=""></a>
+				<a href="{{ path('partager') }}">partager</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="profil_detail">
+		<section>
+			<article>
+				<h2>à propos de moi</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+				</p>
+				<p>{{ app.user.description }}</p>
+			</article>
+			<article>
+				<h2>sports favoris</h2>
+				<ul id="profil_symbol">
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/basket.svg') }}" alt="symbol_basket">Basket</li>
+					</div>
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/tennis.svg') }}" alt="symbol_tennis">
+							Tennis</li>
+					</div>
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/football.svg') }}" alt="symbol_football">Football</li>
+					</div>
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/muscu.svg') }}" alt="symbol_musculation">Musculation</li>
+					</div>
+					<div class="profil_li">
+						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/running.svg') }}" alt="symbol_running">running</li>
+					</div>
+					<div class="profil_li">
+						<li>Plongée sous-marine</li>
+					</div>
+				</ul>
+			</article>
 
 
-      
+			<article>
+				<div>
+					<h2>Défis en cours
+						{{ app.user.nbEvents }}
+					</h2>
+
+				</div>
+				<div class="profil_defis">
+					<div>
+						<h3>Titre du défis</h3>
+						<p>Créer le 1 mars 2021
+						</p>
+						{# <p>Créer le {{ app.challenge.createdAt }} </p> #}
+						<p>Accepter le
+						</p>
+						{# <p>Accepter le {{ app.challenge.dateValidation }}</p> #}
+
+
+					</div>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
+					</p>
+				</div>
+				<p>Nombre de point mis en jeux : 10 xp</p>
+				{# <p>Nombre de point mis en jeux : {{ app.challenge.xpWinner }}</p> #}
+
+
+			</article>
+		</section>
+		<section>
+			<article>
+				<h2>progression</h2>
+				<img src="./img" alt="image niveau">
+				<div>
+					<p>Prochain</p>
+					<p>07/28 xp</p>
+				</div>
+			</article>
+
+
+			<button class="bouton_creer">
+				<a href="{{ path('challenge_new') }}">créer un défi</a>
+			</button>
+			<button class="bouton_creer">
+				<a href="{{ path('event_new') }}">créer un événement</a>
+			</button>
+
+
+		</section>
+	</main>
+	<!-- fin du corps -->
+
 
 {% endblock %}
