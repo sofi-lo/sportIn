@@ -1,11 +1,84 @@
+:root  {
+    --primary_color: #FC9D44;
+    --secondary_color: #386CFC;
+    --white_color: #F5F5F5;
+    --black_color: #131417;
+}
+
 *{
     text-decoration: none;
 }
 
-nav li{
-    display: inline-block;
-    text-decoration: none;
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+ } 
+
+header{
+    width: 100vw;
 }
+
+img {
+    width: 100%;
+}
+
+/* -------------HEADER----------------- */
+
+/* Navbar */
+
+#logo {
+    width: 129px;
+}
+
+#account {
+    color: var(--white_color);
+    background-color: var(--secondary_color);
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center; 
+    padding: 16px 16px;
+    border-radius: 10px; 
+}
+
+/* diaporama */
+
+#diapo{
+    height: 100vh;
+    background-color: var(--white_color);
+}
+
+#diapo__text{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 800px;
+    text-align: left;
+    color: rgb(245, 243, 238);
+}
+
+.diapo__image{
+    height: 100vh;
+    /*  adaptation de l'image à son conteneur */
+   object-fit: cover; /*quand l'image est dans le HTML*/
+   object-position: center;
+   opacity: 1;
+}
+
+
+/* --------------body --------------------*/
+
+#diapo_gamification{
+    height: 100%;
+    background-color: var(--white_color);
+}
+
+
+
+/* --------------footer --------------------*/
+
 
 footer section article {
     display: inline-block;
@@ -20,34 +93,16 @@ footer section article {
 
 }
 
+.footerColor li{
+    display: inline-block;
+    text-decoration: none;
+}
+
 .colorSection{
     background-color: #386cfc;
     color: black;
 }
 
-.diapo{
-    height: 100vh;
-    background-color: #386cfc; 
-    /* text-align: center;  */
-}
-
-.diapo__image{
-    height: 100vh;
-    width: 100%;
-    /*  adaptation de l'image à son conteneur */
-   object-fit: cover; /*quand l'image est dans le HTML*/
-   object-position: center;
-   opacity: 1;
-}
-
-.diapo__text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-90%, -50%);
-    text-align: center;
-    color: rgb(245, 243, 238);
-}
 
 .diapo__event{
     position: absolute;
@@ -80,7 +135,6 @@ footer section article {
 }
 
 #image{
-    width: 100%;
     height: 100%;
 }
 

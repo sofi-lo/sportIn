@@ -2,44 +2,42 @@
 
 {# 1er élément de la page principale #}
 {#  #}
-{% block titre1 %}
-<section>
-<div class="diapo">
+{% block diapo %}
+<section id="diapo" >
     <img class="diapo__image" src="{{ asset('uploads/images/banniere_hp.jpg')}}" alt="Fond">
     <!-- Bloc titre -->
-    <div class="diapo__text">  
-        <h1 class="diapo__title"><span id="blanc">CECI NE RESSEMBLE A AUCUN AUTRE</span><span id="bleu"> RESEAU SOCIAL...</span></h1>
+    <div id="diapo__text">  
+        <h2 class="diapo__title"><span id="blanc">CECI NE RESSEMBLE A AUCUN AUTRE</span><span id="bleu"> RESEAU SOCIAL...</span></h2>
         <h1><span id="bleu">TRANSFORME TES</span> <span id="orange">SEANCES DE SPORT</span><span id="bleu"> EN UN <span id="orange">JEU EXTRAORDINAIRE</span> !</h1>
         <p>SportIn est le premier réseau social de jeu spécialisé dans le sport.</p>
         <p>Gagne des points d'expérience et monte du niveau en lançant des défis à tes amis ou participe et organise tes propres événements.</p>
         <p>Franchis tes propres limites, tout en t'amusant !</p>
         <button id="button" type="submit">Participer au jeu</button>
     </div>
-</div>
 </section>
 {% endblock %}
 
 {############### page 2 ########}
-{% block titre2  %}
-<section class="diapo">
+{% block gamification  %}
+<section id="diapo_gamification">
     <br id="page2">
     <h5 id="blanc">METTEZ-VOUS AU SPORT EN VOUS AMUSANT!</h5>
     <h1 id="orange">BIENVENU DANS LE MONDE MERVEILLEUX DE LA GAMIFICATION</h1>
     <p id="blanc">La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines.</p>
     <p id="blanc">En particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
     <br id="page2">
-<div id="contener">
-    <article>
-        <a><img src="{{ asset('uploads/images/motivation.png')}}" alt="photo1"></a>
-        <p id="orange">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
-    </article>
+    <div id="contener">
+        <article>
+            <a><img src="{{ asset('uploads/images/motivation.png')}}" alt="photo1"></a>
+            <p id="orange">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
+        </article>
 
-    <article>
-        <a><img src="{{ asset('uploads/images/engagement.png')}}" alt="photo2"></a>
-        <p id="orange">Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
-    </article>
-   
-</div>
+        <article>
+            <a><img src="{{ asset('uploads/images/engagement.png')}}" alt="photo2"></a>
+            <p id="orange">Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
+        </article>
+    
+    </div>
 </section>
 {% endblock %}
 
