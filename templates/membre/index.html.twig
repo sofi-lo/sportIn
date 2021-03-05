@@ -12,14 +12,17 @@
 			<!-- bannière -->
 
 			<img class="profil_diapo__banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
+
+      <div class="profil_description">
 			<img class="profil_diapo__profil" src="{{ asset('../uploads/images/profil1.jpg') }}" alt="photo-profil">
 
 			<div class="profil_texte__profil">
 				<h2 class="pseudo">
 					{{ app.user.username }}</h2>
-				<p>{{ app.user.birthDate|date('d-m-Y ') }}</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam erat laoreet. Sed sit amet arcu aliquet, molestie justo at, auctor nunc.</p>
+				<p>{{ app.user.birthDate|date('Y ') }}</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat ante semper diam molestie, et aliquam .</p>
 			</div>
+      </div>
 			<!-- texte_profil -->
 
 		</div>
