@@ -15,7 +15,7 @@
 } */
 
 /*----------- slider-------------  */
-.banniere{
+.profil_diapo__banniere{
     width: 100%;
     margin: auto;
     position: relative;
@@ -24,7 +24,7 @@
 
 }
 
-.diapo_profil{
+.profil_diapo__profil{
     /* Positionnement  */
     position: absolute;
     top: 71%;
@@ -34,7 +34,7 @@
     border-radius: 15px 15px 0px 0px;  
 }
 
-.texte_profil
+.profil_texte__profil
 {
      /* Positionnement  */
      position: absolute;
@@ -45,12 +45,12 @@
      line-height: 1.5;
  
 }
-.texte_profil h2{
+.profil_texte__profil h2{
     color:  #FC9D44; 
 }
 
 /*  nav banniere */
-.nav_banniere{
+.profil_nav__banniere{
   background-color: #386CFC; 
   width: 100%; 
   display: flex;
@@ -59,7 +59,7 @@
   
 }
 
-.nav_banniere a{
+.profil_nav__banniere a{
     color: white;
     text-transform: uppercase;
     font-weight:bold;
@@ -69,7 +69,7 @@
 
 }
 
-main{
+.profil_detail{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -77,7 +77,7 @@ main{
     
 }
 
-main article{
+.profil_detail article{
     background-color: var(--secondary_color);
     border-radius: 10px;  
     margin: 10px 10px;
@@ -88,7 +88,7 @@ main article{
 
 
 
-main li{
+.profil_detail li{
     list-style-type: none;
     display: inline;
     margin-left: 50px;
