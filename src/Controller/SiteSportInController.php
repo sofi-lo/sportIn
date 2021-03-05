@@ -42,6 +42,14 @@ class SiteSportInController extends AbstractController
         ]);
     }
 
+    #[Route('/blogs', name: 'blogs')]
+    public function blogs(): Response
+    {
+        return $this->render('site_sport_in/blogs.html.twig', [
+            'controller_name' => 'SiteSportInController',
+        ]);
+    }
+
     #[Route('/defis', name: 'defis')]
     public function defis(): Response
     {
