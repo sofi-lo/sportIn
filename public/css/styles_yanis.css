@@ -45,9 +45,7 @@
  }
 
  .entete {
-     box-sizing: border-box;
      height: 80px;
-     margin-bottom: 2rem;
      display: flex;
      flex-direction: column;
  }
@@ -63,8 +61,10 @@
      border-radius: 10px;
  }
 
+ .rapide_facile{
+    transform: translate(-3%,0%);
+ }
 
- /* Telephone */
  @media screen and (min-width: 400px) {
      .main_inscr {
          width: 30%;
