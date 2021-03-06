@@ -12,6 +12,9 @@
 }
 
 /*-----------profil slider-------------  */
+.profil_h2{
+    text-transform: uppercase;
+}
 .profil_menu{
     display: none;
       
@@ -162,12 +165,6 @@ Media queries
         width: 20px;
     }
 
-    /* .profil_menu__item--active, .profil_menu__item:hover{
-        border-color: rgb(153, 21, 21);
-    } */
-    /* .profil_menu a:not([target="_blank"]){
-        text-decoration: none;
-    } */
     .profil_diapo__banniere {
         width: 100%;
     }
@@ -196,6 +193,9 @@ Media queries
         margin: 0 1rem;
         padding: 1.3rem;
     }
+    .profil_nav__banniere a:hover{
+        color: #FC9D44;
+    }
 
     .profil_detail {
         display: grid;
@@ -204,3 +204,8 @@ Media queries
         box-shadow: 2px 6px;
     }
 }
+
+
+
+
+/* formulaire */

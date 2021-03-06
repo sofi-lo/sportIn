@@ -56,13 +56,13 @@
 	<main class="profil_detail">
 		<section>
 			<article>
-				<h2>à propos de moi</h2>
+				<h2 class="profil_h2">à propos de moi</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque. In volutpat
 				</p>
 				<p>{{ app.user.description }}</p>
 			</article>
 			<article>
-				<h2>sports favoris</h2>
+				<h2 class="profil_h2">sports favoris</h2>
 				<ul id="profil_symbol">
 					<div class="profil_li">
 						<li><img class="profil_symbol__sport" src="{{ asset('uploads/svg/basket.svg') }}" alt="symbol_basket">Basket</li>
@@ -89,7 +89,7 @@
 
 			<article>
 				<div>
-					<h2>Défis en cours
+					<h2 class="profil_h2">Défis en cours
 						{{ app.user.nbEvents }}
 					</h2>
 
@@ -118,7 +118,7 @@
 		</section>
 		<section>
 			<article class="profil_progression">
-				<h2>progression</h2>
+				<h2 class="profil_h2">progression</h2>
 				<img class="profil_progression__niveau" src="{{ asset('uploads/svg/level.svg') }}" alt="symbol_niveau">
 				<p>Niveau 6</p>
 				<div class="profil_niveau">
