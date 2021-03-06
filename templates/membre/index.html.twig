@@ -5,6 +5,17 @@
 
 {% block bodyMembre %}
 	<header>
+		<nav class="profil_menu">
+		<a href="{{ path('index') }}"><img class="profil_menu__logo" src="{{ asset('uploads/images/logo.png') }}" alt="Logo"></a>
+		<ul>
+			{# <li class="profil_menu__item profil_menu__item--active"><a class="profil_menu__link" href="{{ path('user_new') }}">Blog</a></li> #}
+			<li><a href="{{ path('blog') }}">Blog</a></li>
+			<li><a href="{{ path('contact') }}">Faq</a></li>
+			<li><a href="">Rechercher</a></li>
+			<li><a href=""></a></li>
+			<li><a href=""><img class="profil_menu__logos" src="{{ asset('uploads/svg/profil.svg') }}" alt="photo-profil"></a></li>
+		</ul>
+		</nav>
 		<!-- slider -->
 
 		<div
@@ -106,10 +117,10 @@
 			</article>
 		</section>
 		<section>
-			<article class="profil-progression">
+			<article class="profil_progression">
 				<h2>progression</h2>
-				<img src="./img" alt="image niveau">
-				<p>Niveau 1</p>
+				<img class="profil_progression__niveau" src="{{ asset('uploads/svg/level.svg') }}" alt="symbol_niveau">
+				<p>Niveau 6</p>
 				<div class="profil_niveau">
 					<p>Prochain niveau</p>
 					<p>07/28 xp</p>
@@ -119,14 +130,12 @@
 				
 			</article>
 
-
-			<button class="bouton_creer">
+			<button class="profil_bouton__creer">
 				<a href="{{ path('challenge_new') }}">créer un défi</a>
 			</button>
-			<button class="bouton_creer">
+			<button class="profil_bouton__creer">
 				<a href="{{ path('event_new') }}">créer un événement</a>
 			</button>
-
 
 		</section>
 	</main>
