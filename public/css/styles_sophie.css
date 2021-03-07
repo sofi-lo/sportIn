@@ -12,6 +12,7 @@
 }
 
 /*-----------profil -------------  */
+
 .profil_h2 {
     text-transform: uppercase;
 }
@@ -25,6 +26,14 @@
     margin: auto;
     position: relative;
     height: 450px
+}
+.profil_menus{
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    margin-left: auto;
+    transform: translate(0%, 50%);
+    width: 40px;
 }
 
 /* description profil */
@@ -97,6 +106,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+.profil_defis p{
+    margin: 0  1rem 0 0;
+}
 
 /* progression */
 .profil_progression #file {
@@ -147,6 +159,9 @@ Media queries
 @media screen and (min-width: 750px) {
 
     /* menu */
+    .profil_menus{
+        display: none;
+    }
     .profil_menu {
         display: flex;
         justify-content: space-between;
@@ -160,7 +175,7 @@ Media queries
     .profil_menu li {
         display: inline;
         padding: 10px;
-        margin: 0 2rem;
+        margin: 0 1rem;
     }
 
     .profil_menu a {
@@ -169,7 +184,7 @@ Media queries
         color: var(--primary_color);
     }
 
-    .profil_menu__logos {
+    .profil_menu__logos  {
         width: 20px;
     }
 
