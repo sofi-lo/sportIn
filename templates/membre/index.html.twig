@@ -1,5 +1,5 @@
 {% extends 'parent.html.twig' %}
-
+{% block monheader %}{% endblock %}
 {% block title %}Profil
 {% endblock %}
 
@@ -11,20 +11,18 @@
 			<a href="{{ path('index') }}"><img class="profil_menu__logo" src="{{ asset('uploads/images/logo.png') }}" alt="Logo"></a>
 			<ul>
 				<li>
-					<a href="{{ path('blog') }}">Blog</a>
+					<a href="{{ path('blogs') }}">Blog</a>
 				</li>
 				<li>
-					<a href="{{ path('contact') }}">Faq</a>
+					<a href="{{ path('faq') }}">Faq</a>
 				</li>
 				<li>
 					<a href="">Rechercher</a>
 				</li>
+				
+				<li><a href="#"><img class="profil_menu__logos" src="{{ asset('uploads/svg/notification.svg') }}" alt="symbol_notification"></a></li>
 				<li>
-					<a href=""></a>
-				</li>
-				<li><a href=""><img class="profil_menu__logos" src="{{ asset('uploads/svg/notification.svg') }}" alt="symbol_notification"></a></li>
-				<li>
-					<a href=""><img class="profil_menu__logos" src="{{ asset('uploads/svg/profil.svg') }}" alt="symbol-profil"></a>
+					<a href="#"><img class="profil_menu__logos" src="{{ asset('uploads/svg/profil.svg') }}" alt="symbol-profil"></a>
 				</li>
 			</ul>
 		</nav>

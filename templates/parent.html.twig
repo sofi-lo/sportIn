@@ -17,6 +17,7 @@
 
 </head>
 <body>
+    {% block monheader %}
     <header>
         <nav>
             <a><a href="{{ path('index') }}"><img src="{{ asset('uploads/images/logo.png')}}" alt="logo" id="logo"></a></a>
@@ -40,6 +41,7 @@
         {% endblock %}
  
     </header>
+        {% endblock %}
         <section>
             {% block formulaire1 %}
             {% endblock %}
