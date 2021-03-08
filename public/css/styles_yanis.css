@@ -9,7 +9,7 @@
  }
 
  form[name=registration_form] input{
-    width: 90%;
+    width: 95%;
     height: 35px;
     border: 1px solid #386CFC;
     box-sizing: border-box;
@@ -41,11 +41,25 @@
      height: 80px;
      display: flex;
      flex-direction: column;
+     margin-top: 20px;
  }
 
  .registration_formulaire {
      color: #386CFC;
  }
+
+ /* .pseudo{
+    display: flex;
+
+ }
+
+ .email{
+     display: flex;
+ }
+
+ .mdp{
+     display: flex;
+ } */
 
  .btn_formulaire {
      background: #F79C3C;
@@ -58,9 +72,10 @@
     transform: translate(-3%,0%);
  }
 
- @media screen and (min-width: 400px) {
+ @media screen and (min-width: 750px) {
      .main_inscr {
          width: 30%;
+         height: 70%;
      }
  }
 
