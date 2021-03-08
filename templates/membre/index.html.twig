@@ -3,8 +3,9 @@
 {% block title %}Profil
 {% endblock %}
 
-{% block bodyMembre %}
-	<header>
+
+	
+{% block navMembre %}
 		<!-- navigation header -->
 		<a href=""><img class="profil_menus" src="{{ asset('uploads/svg/menu.svg') }}" alt="symbol_menus"></a>
 		<nav class="profil_menu">
@@ -27,7 +28,7 @@
 			</ul>
 		</nav>
 		<!-- fin navigation header-->
-
+		
 		<!-- début banniere -->
 		<div class="profil_banniere">
 			<img class="profil_diapo__banniere" src="{{ asset('../uploads/images/banniere_profil.jpg') }}" alt="photo-fond">
@@ -46,7 +47,7 @@
 			<!-- fin description -->
 		</div>
 		<!-- fin bannière -->
-
+	
 		<!--nav_banniere  -->
 		<nav class="profil_nav__banniere">
 			<div>
@@ -61,9 +62,11 @@
 			</div>
 		</nav>
 		<!-- fin nav_banniere -->
-	</header>
-
-
+{% endblock %}
+	
+	
+	
+	{% block bodyMembre %}
 	<main class="profil_detail">
 		<section>
 			<!-- à propos..  -->
