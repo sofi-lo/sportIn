@@ -36,10 +36,12 @@
             <a href="{{ path('user_index') }}">Users</a>
             <a href="{{ path('app_logout') }}">déconnexion</a>
             {% elseif is_granted('ROLE_USER') %}
+            {% block monheader2 %}
             <a href="{{ path('index') }}">accueil</a>
             <a href="{{ path('blogs') }}">Blog</a>
             <a href="{{ path('concept') }}">annonces</a>
             <a href="{{ path('contact') }}">contact</a>
+            {% endblock %}
             {% endif %}
         </nav>
         </header>
