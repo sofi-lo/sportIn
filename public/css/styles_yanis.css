@@ -14,6 +14,7 @@
     border: 1px solid #386CFC;
     box-sizing: border-box;
     border-radius: 10px;
+    color: #FC9D44 
 }
 
 #registration_form_birthDate_month{
@@ -47,19 +48,6 @@
  .registration_formulaire {
      color: #386CFC;
  }
-
- /* .pseudo{
-    display: flex;
-
- }
-
- .email{
-     display: flex;
- }
-
- .mdp{
-     display: flex;
- } */
 
  .btn_formulaire {
      background: #F79C3C;
