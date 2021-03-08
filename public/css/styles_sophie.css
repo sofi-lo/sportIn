@@ -67,6 +67,9 @@
 /* _____________________________________________________________ */
 /* main */
 /* les articles */
+/* .profil_detail{
+    margin-top: -200px;
+} */
 .profil_detail article {
     background-color: var(--secondary_color);
     border-radius: 10px;

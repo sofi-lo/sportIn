@@ -28,7 +28,6 @@
     <body>
     <header class="container">
         <nav>
-            
             {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('blog_index') }}">Blog</a>
             <a href="{{ path('category_index') }}">Catégories</a>
