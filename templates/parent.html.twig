@@ -19,6 +19,7 @@
 
 </head>
 <body>
+    {% block monheader %}
     <header>
         <nav id="menu">
             <a href="{{ path('index') }}" id="container_logo"  ><img src="{{ asset('uploads/images/logo.png')}}" alt="logo" id="logo" ></a>
@@ -47,6 +48,7 @@
         {% endblock %}
  
     </header>
+        {% endblock %}
         <section>
             {% block formulaire1 %}
             {% endblock %}
@@ -54,7 +56,10 @@
             {% block gamification %}
             {% endblock %}
 
-            {% block annonces1 %}
+            {% block titre1 %}
+            {% endblock %}
+
+            {% block titre2 %}
             {% endblock %}
 
             {% block services %}

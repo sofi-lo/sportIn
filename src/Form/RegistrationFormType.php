@@ -37,10 +37,10 @@ class RegistrationFormType extends AbstractType
                 'years' => range(1950, 2021),
             ])
             ->add('email',  TextType::class, [
-                'attr' => ['placeholder' => 'EMAIL']
+                'attr' => ['placeholder' => 'brouette@gmail.com']
             ])
             ->add('pseudo', TextType::class, [
-                'attr' => ['placeholder' => 'PSEUDO']
+                'attr' => ['placeholder' => 'brouettedu31']
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

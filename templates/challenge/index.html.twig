@@ -31,9 +31,9 @@
                 <td>{{ challenge.organisateur }}</td>
                 <td>{{ challenge.xpWinner }}</td>
                 <td>{{ challenge.arbitre }}</td>
-                <td>{{ challenge.createdAt ? challenge.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ challenge.dateValidation ? challenge.dateValidation|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ challenge.dateFin ? challenge.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ challenge.createdAt ? challenge.createdAt|date('d-m-Y ') : '' }}</td>
+                <td>{{ challenge.dateValidation ? challenge.dateValidation|date('d-m-Y') : '' }}</td>
+                <td>{{ challenge.dateFin ? challenge.dateFin|date('d-m-Y') : '' }}</td>
                 <td>
                     <a href="{{ path('challenge_show', {'id': challenge.id}) }}">show</a>
                     <a href="{{ path('challenge_edit', {'id': challenge.id}) }}">edit</a>

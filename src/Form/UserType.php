@@ -12,6 +12,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        // champ du formulaire
             ->add('email')
             // ->add('roles')
             // ->add('password')
@@ -22,7 +23,7 @@ class UserType extends AbstractType
             ->add('rgpd')
             ->add('createdAt')
             ->add('isVerified')
-            ->add('birthDate')
+            // ->add('birthDate')
             ->add('description')
         ;
     }
