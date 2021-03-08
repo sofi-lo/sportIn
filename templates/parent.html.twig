@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Projet Symfony</title>
+    <title>SportIn - Resaux social sportif</title>
     
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_bruno.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}">
+    {# <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}"> #}
 
     {# Police #}
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,7 +27,7 @@
             <ul id="container_menu" >
                 {# <li class="menu__item" ><a href="{{ path('index') }}"  class="menu__link"  >concept</a></li> #}
                 <li class="menu__item" ><a href="{{ path('defis') }}" class="menu__link"  >defis</a></li>
-                <li class="menu__item" ><a href="{{ path('blog') }}" class="menu__link"  >blog</a></li>
+                <li class="menu__item" ><a href="{{ path('blogs') }}" class="menu__link"  >blog</a></li>
                 <li class="menu__item" ><a href="{{ path('faq') }}" class="menu__link"   >faq</a></li>
                 <li class="menu__item" ><a href="{{ path('contact') }}" class="menu__link"  >contact</a></li>
             </ul>
@@ -34,7 +35,7 @@
                 <a href="{{ path('app_register') }}" class="primary_button">participer au jeu</a>
                 {% if app.user %}
                     <div >
-                        Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="secondary_button" >Déconnexion</a>
+                        <a href="{{ path('app_logout') }}" class="secondary_button" >Déconnexion</a>
                     </div>
                 {% endif %}
                 
@@ -46,6 +47,12 @@
        
         {% block diapo %}
         {% endblock %}
+
+        {% block titre1 %}
+        {% endblock %}
+
+        {% block bodyMembre %}
+        {% endblock %}
  
     </header>
         {% endblock %}
@@ -56,8 +63,6 @@
             {% block gamification %}
             {% endblock %}
 
-            {% block titre1 %}
-            {% endblock %}
 
             {% block titre2 %}
             {% endblock %}
@@ -101,8 +106,7 @@
             {% block carte2 %}
             {% endblock %}
 
-            {% block bodyMembre %}
-            {% endblock %}
+
 
             {% block container_login %}
             {% endblock %}

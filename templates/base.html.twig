@@ -28,7 +28,7 @@
     <body>
     <header class="container">
         <nav>
-            <a href="{{ path('index') }}">accueil</a>
+            
             {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('blog_index') }}">Blog</a>
             <a href="{{ path('category_index') }}">Catégories</a>
@@ -37,6 +37,7 @@
             <a href="{{ path('user_index') }}">Users</a>
             <a href="{{ path('app_logout') }}">déconnexion</a>
             {% elseif is_granted('ROLE_USER') %}
+            <a href="{{ path('index') }}">accueil</a>
             <a href="{{ path('blog') }}">Blog</a>
             <a href="{{ path('concept') }}">annonces</a>
             <a href="{{ path('contact') }}">contact</a>
