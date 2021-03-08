@@ -113,6 +113,10 @@ body {
 
 /* diaporama */
 
+.image{
+    width: 450px;
+}
+
 #diapo{
     background-color: var(--white_color);
 }
@@ -220,6 +224,7 @@ body {
 
 .container_services {
     padding: 0 1rem;
+    height: 450px;
 }
 
 .services_title {
