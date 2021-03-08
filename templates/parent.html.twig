@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Projet Symfony</title>
+    
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles_bruno.css') }}">
-     <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_sophie.css') }}">
 
     {# Police #}
-     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
@@ -17,29 +19,36 @@
 
 </head>
 <body>
+    {% block monheader %}
     <header>
-        <nav>
-            <a><a href="{{ path('index') }}"><img src="{{ asset('uploads/images/logo.png')}}" alt="logo" id="logo"></a></a>
-            <a href="{{ path('index') }}">CONCEPT</a>
-            <a href="{{ path('defis') }}">DERNIERS_DEFIS</a>
-            <a href="{{ path('blog') }}">BLOG</a>
-            <a href="{{ path('faq') }}">FAQ</a>
-            <a href="{{ path('contact') }}">CONTACT</a>
-            <a href="{{ path('app_register') }}" id="account" >PARTICIPER AU JEU</a>
-        </nav>
-            {% if app.user %}
-               <div class="mb-3">
-                    Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
-                </div>
-            {% endif %}
-        <nav>
-        <a href="{{ path('app_login') }} ">Connexion</a>
+        <nav id="menu">
+            <a href="{{ path('index') }}" id="container_logo"  ><img src="{{ asset('uploads/images/logo.png')}}" alt="logo" id="logo" ></a>
+            <ul id="container_menu" >
+                {# <li class="menu__item" ><a href="{{ path('index') }}"  class="menu__link"  >concept</a></li> #}
+                <li class="menu__item" ><a href="{{ path('defis') }}" class="menu__link"  >defis</a></li>
+                <li class="menu__item" ><a href="{{ path('blog') }}" class="menu__link"  >blog</a></li>
+                <li class="menu__item" ><a href="{{ path('faq') }}" class="menu__link"   >faq</a></li>
+                <li class="menu__item" ><a href="{{ path('contact') }}" class="menu__link"  >contact</a></li>
+            </ul>
+            <div id="menu_button">
+                <a href="{{ path('app_register') }}" class="primary_button">participer au jeu</a>
+                {% if app.user %}
+                    <div >
+                        Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="secondary_button" >Déconnexion</a>
+                    </div>
+                {% endif %}
+                
+                <a href="{{ path('app_login') }} " class="secondary_button" >Connexion</a>
+            </div>
+            
+
         </nav>
        
         {% block diapo %}
         {% endblock %}
  
     </header>
+        {% endblock %}
         <section>
             {% block formulaire1 %}
             {% endblock %}
@@ -53,7 +62,7 @@
             {% block titre2 %}
             {% endblock %}
 
-            {% block titre3 %}
+            {% block services %}
             {% endblock %}
 
             {% block titre4 %}
@@ -103,40 +112,57 @@
         </section>
     </main>
     <footer>
-    <nav class="footerColor">
-        <li><h2>NOUS SUIVRE : </h2></li>
-        <li><a href="https://facebook.com"><img src="uploads/svg/facebook.svg" alt="facebook"></a></li>
-        <li><a href="https://twitter.com"><img src="uploads/svg/twitter.svg" alt="facebook"></a></li>
-        <li><a href="https://instagram.com"><img src="uploads/svg/instagram.svg" alt="facebook"></a></li>
-        <li><a href="https://youtube.com"><img src="uploads/svg/youtube.svg" alt="facebook"></a></li>
-        <li><a href="https://pinterest.com"><img src="uploads/svg/pinterest.svg" alt="facebook"></li>
-    </nav>
-    <section class="colorSection">
-    <article>
-        <h2 id="orange" >SportIn</h2>
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Inscription</a></li>
-        <li><a href="{{ path('index') }}">Concept</a></li>
-        <li><a href="{{ path('defis') }}">Derniers défis</a></li>
-    </article>
-    <article>
-        <h2 id="orange">Communauté</h2>
-        <li><a href="#">Avis & témoignages</a></li>
-        <li><a href="#">Le groupe Facebook</a></li>
-        <li><a href="#">Notre chaine youtube</a></li>
-        <li><a href="#"></a></li>
-    </article>
-    <article>
-        <h2 id="orange">Informations</h2>
-        <li><a href="{{ path('contact') }}">Contact</a></li>
-        <li><a href="#">A propos</a></li>
-        <li><a href="{{ path('faq') }}">FAQ</a></li>
-        <li><a href="#">Devenez rédacteur</a></li>
-    </article>
-    </section>
+        <div id="footer_first">
+            <nav id="social_container">
+                <p> nous suivre :</p>
+                <ul id="social_menu">
+                    <li class="social_items" ><a href="https://facebook.com"><img src="uploads/svg/facebook.svg" alt="facebook"></a></li>
+                    <li class="social_items" ><a href="https://twitter.com"><img src="uploads/svg/twitter.svg" alt="facebook"></a></li>
+                    <li class="social_items" ><a href="https://instagram.com"><img src="uploads/svg/instagram.svg" alt="facebook"></a></li>
+                    <li class="social_items" ><a href="https://youtube.com"><img src="uploads/svg/youtube.svg" alt="facebook"></a></li>
+                    <li class="social_items" ><a href="https://pinterest.com"><img src="uploads/svg/pinterest.svg" alt="facebook"></li>
+                </ul>
+            </nav>
+        </div>
+        <section id="footer_second">
+            <div id="footer_second_container" >
 
-        <p class="footerColor">Copyright &copy; 2021 www.sportin.com - Mentions légales - Politique de confidentialité - Plan du site - Reproduction interdite.</p>
+                <section class="second_container_col" >
+                    <h2 id="orange" >SportIn</h2>
+                    <ul>
+                        <li><a href="#">Connexion</a></li>
+                        <li><a href="#">Inscription</a></li>
+                        <li><a href="{{ path('index') }}">Concept</a></li>
+                        <li><a href="{{ path('defis') }}">Derniers défis</a></li>
+                    </ul>
+                </section>
+
+                <section class="second_container_col" >
+                    <h2 id="orange">Communauté</h2>
+                    <ul>
+                        <li><a href="#">Avis & témoignages</a></li>
+                        <li><a href="#">Le groupe Facebook</a></li>
+                        <li><a href="#">Notre chaine youtube</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </section>
+
+                <section class="second_container_col" >
+                    <h2 id="orange">Informations</h2>
+                    <ul>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                        <li><a href="#">A propos</a></li>
+                        <li><a href="{{ path('faq') }}">FAQ</a></li>
+                        <li><a href="#">Devenez rédacteur</a></li>
+                    </ul>
+                </section>
+                    
+            </div>
+            
+        </section>
+        <p id="copy">Copyright &copy; 2021 www.sportin.com - Mentions légales - Politique de confidentialité - Plan du site - Reproduction interdite.</p>
     </footer>
+    
     <script src="{{ asset('js/anime.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
     {% block monjs %}

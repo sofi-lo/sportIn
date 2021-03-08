@@ -7,97 +7,91 @@
     <img class="diapo__image" src="{{ asset('uploads/images/banniere_hp.jpg')}}" alt="Fond">
     <!-- Bloc titre -->
     <div id="diapo__text">  
-        <h2 class="diapo__title"><span id="blanc">CECI NE RESSEMBLE A AUCUN AUTRE</span><span id="bleu"> RESEAU SOCIAL...</span></h2>
-        <h1><span id="bleu">TRANSFORME TES</span> <span id="orange">SEANCES DE SPORT</span><span id="bleu"> EN UN <span id="orange">JEU EXTRAORDINAIRE</span> !</h1>
+        <h2>CECI NE RESSEMBLE A AUCUN AUTRE<span id="social"> RESEAU SOCIAL...</span></h2>
+        <h1>TRANSFORME TES <span class="main_title">SEANCES DE SPORT</span>EN UN <span class="main_title">JEU EXTRAORDINAIRE</span> !</h1>
         <p>SportIn est le premier réseau social de jeu spécialisé dans le sport.</p>
         <p>Gagne des points d'expérience et monte du niveau en lançant des défis à tes amis ou participe et organise tes propres événements.</p>
         <p>Franchis tes propres limites, tout en t'amusant !</p>
-        <button id="button" type="submit">Participer au jeu</button>
+        <a href="{{ path('app_register') }}" id="primary_button">participer au jeu</a>
     </div>
 </section>
 {% endblock %}  
 
 {############### page 2 ########}
 {% block gamification  %}
-<section id="diapo_gamification">
-    <br id="page2">
-    <h5 id="blanc">METTEZ-VOUS AU SPORT EN VOUS AMUSANT!</h5>
-    <h1 id="orange">BIENVENU DANS LE MONDE MERVEILLEUX DE LA GAMIFICATION</h1>
-    <p id="blanc">La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines.</p>
-    <p id="blanc">En particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
-    <br id="page2">
-    <div id="contener">
-        <article>
-            <a><img src="{{ asset('uploads/images/motivation.png')}}" alt="photo1"></a>
-            <p id="orange">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
-        </article>
+<section id="gamification">
+    <div id="diapo_gamification">
+        <h2 >mettez-vous au sport en vous amusant !</h>
+        <h1 >bienvenuye dans le monde merveilleux de la gamification</h1>
+        <p id="gamification_text">La gamification (ludification), désigne l'utilisation des mécanisme du jeu dans d'autres domaines, en particulier dans des situations d'apprentissage, des situations de travail, des réseaux sociaux...</p>
+        <div id="container_gamification">
+            <article class="card_gamification">
+                <a><img src="{{ asset('uploads/images/motivation.png')}}" alt="photo1" class="img_gamification" ></a>
+                <p class="text_gamification">Utiliser des activités gamifiées augmente la motivation de 48% (Source : Forbes)</p>
+            </article>
 
-        <article>
-            <a><img src="{{ asset('uploads/images/engagement.png')}}" alt="photo2"></a>
-            <p id="orange">Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
-        </article>
-    
+            <article class="card_gamification">
+                <a><img src="{{ asset('uploads/images/engagement.png')}}" alt="photo2" class="img_gamification" ></a>
+                <p class="text_gamification" >Les sociétés qui utilisent la gamification bénéficient d'un taux d'engagement client jusqu'à 7 fois supérieur.(Source : Business.com)</p>
+            </article>
+        </div>
     </div>
+
 </section>
 {% endblock %}
 
 {# 3eme élément de la page principale #}
-{% block titre3 %}
+{% block services %}
 
-<section>
-<h1 id="orange">EVENEMENTS</h1>
-    <div  id="contener">
-        <div>
-            <a><img id="image" src="{{ asset('uploads/images/event.jpg')}}" alt="photo1"></a>
-        </div>
-        <div>
-            <p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
-            <p>Besoins d'une personne pour complèter ton équipe de sort ? Organise ta propre séance et partage la avec la communauté.</p>
-            <p>Chaque événement auquel tu participes te fait gagner des points d'expérience qui te permettent de monter de niveau.</p>
-            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Participer à un événement.</strong></span></a></p>
-            <p id="bleu"><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>En savoir plus</strong></span></a></p>
+<section class="container_services" >
+    <div class="container_text container_reverse" >
+        <img id="image" src="{{ asset('uploads/images/event.jpg')}}" alt="photo1">
+        <div class="service_text" >
+            <div class="service_text_left" >
+                <h1 class="services_title">Evennements</h1>
+                <p>Participe à des événements sportifs prés de chez toi et recontre de nouveaux partenaires de sport, pour une journée, un mois ou toute une vie.</p>
+                <p>Besoins d'une personne pour complèter ton équipe de sort ? Organise ta propre séance et partage la avec la communauté.</p>
+                <p class="service_info" >Chaque événement auquel tu participes te fait gagner des points d'expérience qui te permettent de monter de niveau.</p>
+                <a href="{{ path('defis') }}" class="service_link"><i class="las la-arrow-right"></i>Participer à un événement</a>
+                <a href="{{ path('blog') }}" class="service_link"><i class="las la-arrow-right"></i>En savoir plus</a>
+            </div>
+
         </div>
     </div>
 </section>
 
-<section>
-<h1 id="orange">DEFIS</h1>
-    <div  id="contener">
-        <div>
+<section class="container_services" >
+    <div class="container_text " >  
+        <img id="image" src="{{ asset('uploads/images/defis.jpg')}}" alt="photo2">
+        <div class="service_text service_text_right">
+            <h1 class="services_title">Defis</h1>
             <p>Défis tes amis sur le sport et paris tes points d'expérience. Si tu préféres la jouer en solo, tu peux te lancer des défis pour gagner en expériences et en niveaux</p>
-            <p>Besoins d'une personnes pour compléter ton équipe de sport ? Organise ta propre séance et partage la avec la communauté.</p>
-            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Organiser un défi.</strong></span></a></p>
-            <p><a href="{{ path('blog') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Participer à un défi</strong></span></a></p>
-        </div>    
-        <div>
-            <a><img id="image" src="{{ asset('uploads/images/defis.jpg')}}" alt="photo2"></a>
-        </div>
+            <p class="service_info" >Besoins d'une personnes pour compléter ton équipe de sport ? Organise ta propre séance et partage la avec la communauté.</p>
+            <a href="{{ path('defis') }}" class="service_link" ><i class="las la-arrow-right"></i>Organiser un défi</a>
+            <a href="{{ path('blog') }}" class="service_link"><i class="las la-arrow-right"></i>Participer à un défi</a>
+        </div> 
     </div>            
 </section>
 
-<section>
-<h1 id="orange">ANNUAIRE</h1>
-    <div  id="contener">
-        <div>
-            <a><img id="image" src="{{ asset('uploads/images/annuaire.jpg')}}" alt="photo3"></a>
-        </div>
-        <div>
-            <p>Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
-            <p><a href="{{ path('participer') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
+<section class="container_services" >
+    <div class="container_text container_reverse" >
+        <img id="image" src="{{ asset('uploads/images/annuaire.jpg')}}" alt="photo3">
+        <div class="service_text service_text_left">
+            <h1 class="services_title">Annuaire</h1>
+            <p class="service_info" >Trouve les informations de tes lieux de sport favoris et découvres-en des nouveaux près de chez toi.</p>
+            <a href="{{ path('participer') }}" class="service_link"><i class="las la-arrow-right"></i>Trouver un lieux</a>
         </div>
     </div>   
 </section>
 
-<section>
-<h1 id="orange">ACTUALITES</h1>
-    <div  id="contener">
-        <div>
+<section class="container_services" >
+    <div class="container_text" >
+        <img id="image" src="{{ asset('uploads/images/actualite.jpg') }}" alt="photo4">
+        <div class="service_text service_text_right">
+            <h1 class="services_title">Actualitées</h1>
             <p>Bénéficie d'actualité exclusive tout en gagnant des points d'expérience pour toute interaction.</p>
-            <p>Commente, like ou partage et monte de niveau !</p>
-            <p><a href="{{ path('defis') }}"><span  id="bleu"><strong><i class="las la-arrow-right"></i>Trouver un lieux.</strong></span></a></p>
-        </div>
-        <div>
-            <a><img id="image" src="{{ asset('uploads/images/actualite.jpg') }}" alt="photo4"></a>
+            <p class="service_info" >Commente, like ou partage et monte de niveau !</p>
+            <a href="{{ path('defis') }}" class="service_link"><i class="las la-arrow-right"></i>Trouver un lieux</a>
         </div>
     </div>              
 </section>

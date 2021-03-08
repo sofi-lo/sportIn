@@ -26,12 +26,12 @@
                 <td>{{ event.id }}</td>
                 <td>{{ event.title }}</td>
                 <td>{{ event.contents }}</td>
-                <td>{{ event.dateEvents ? event.dateEvents|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.dateEvents ? event.dateEvents|date('d-m-Y') : '' }}</td>
                 <td>{{ event.categoriesEvents }}</td>
                 <td>{{ event.memberPlayers }}</td>
                 <td>{{ event.xpEvents }}</td>
                 <td>{{ event.userId }}</td>
-                <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.createdAt ? event.createdAt|date('d-m-Y') : '' }}</td>
                 <td>
                     <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
                     <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
