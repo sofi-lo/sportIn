@@ -37,7 +37,7 @@
             <a href="{{ path('app_logout') }}">déconnexion</a>
             {% elseif is_granted('ROLE_USER') %}
             <a href="{{ path('index') }}">accueil</a>
-            <a href="{{ path('blog') }}">Blog</a>
+            <a href="{{ path('blogs') }}">Blog</a>
             <a href="{{ path('concept') }}">annonces</a>
             <a href="{{ path('contact') }}">contact</a>
             {% endif %}
