@@ -68,6 +68,10 @@
      border-radius: 10px;
  }
 
+ .btn_formulaire:hover {
+    border: 3px solid #18A0FB;
+}
+
  .rapide_facile{
     transform: translate(-3%,0%);
  }
@@ -77,10 +81,7 @@
          width: 30%;
          height: 70%;
      }
- }
-
- @media screen and (max-width: 400px) {
-    .logo_sportin{
-        transform: translate(-130%,-50%);
-    }
+     .rapide_facile{
+        transform: translate(-2%,0%)
+     }
  }
