@@ -288,7 +288,6 @@ footer li {
 #social_container{
     display: flex;
     align-items: center;
-    margin: 0 1rem;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -343,6 +342,10 @@ footer li {
     text-align: center;
     color: var(--white_color);
 }
+
+.svg_social{
+width:30px;
+} 
 
 
 /* tablet et petit ecran */
